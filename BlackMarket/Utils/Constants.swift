@@ -36,6 +36,8 @@ struct Constant {
 struct Font {
     
     static let Futura = "Futura-Bold"
+    
+    static let AvenirNext  = "AvenirNext-Medium"
 }
 
 

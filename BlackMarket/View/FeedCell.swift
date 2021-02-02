@@ -28,7 +28,7 @@ class FeedCell: UICollectionViewCell {
         label.text = "Name"
         label.textColor = UIColor.white
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.systemFont(ofSize: 16)
+        label.font =  UIFont(name: Font.AvenirNext , size: 16)
         label.textAlignment = .left
         label.numberOfLines = 2
         
