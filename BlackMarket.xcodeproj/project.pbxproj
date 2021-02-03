@@ -37,6 +37,10 @@
 		4794FACB25C8F036005C2284 /* CategoryData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4794FACA25C8F036005C2284 /* CategoryData.swift */; };
 		4794FAD325C8F056005C2284 /* DummyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4794FAD225C8F056005C2284 /* DummyData.swift */; };
 		47A4253F25C8FF2D00170854 /* shoppin.json in Resources */ = {isa = PBXBuildFile; fileRef = 47A4253E25C8FF2D00170854 /* shoppin.json */; };
+		47A4254825CA5F2600170854 /* ProfileHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47A4254725CA5F2600170854 /* ProfileHeader.swift */; };
+		47A4257025CA6AE100170854 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47A4256F25CA6AE100170854 /* ProfileViewModel.swift */; };
+		47A4257525CA6BCC00170854 /* ProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47A4257425CA6BCC00170854 /* ProfileCell.swift */; };
+		47A4257A25CA72D100170854 /* ProfileFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47A4257925CA72D100170854 /* ProfileFooter.swift */; };
 		5A52EFB8222E27A35B0E1E8A /* libPods-BlackMarket.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7502830A4A51046405D93ED0 /* libPods-BlackMarket.a */; };
 /* End PBXBuildFile section */
 
@@ -94,6 +98,10 @@
 		4794FACA25C8F036005C2284 /* CategoryData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryData.swift; sourceTree = "<group>"; };
 		4794FAD225C8F056005C2284 /* DummyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyData.swift; sourceTree = "<group>"; };
 		47A4253E25C8FF2D00170854 /* shoppin.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = shoppin.json; sourceTree = "<group>"; };
+		47A4254725CA5F2600170854 /* ProfileHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeader.swift; sourceTree = "<group>"; };
+		47A4256F25CA6AE100170854 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		47A4257425CA6BCC00170854 /* ProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCell.swift; sourceTree = "<group>"; };
+		47A4257925CA72D100170854 /* ProfileFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileFooter.swift; sourceTree = "<group>"; };
 		7502830A4A51046405D93ED0 /* libPods-BlackMarket.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BlackMarket.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		91FD1D11EF0A45D1C238FFD7 /* Pods-BlackMarket.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlackMarket.debug.xcconfig"; path = "Target Support Files/Pods-BlackMarket/Pods-BlackMarket.debug.xcconfig"; sourceTree = "<group>"; };
 		F9933F79783DE97FA86F8211 /* Pods-BlackMarket.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlackMarket.release.xcconfig"; path = "Target Support Files/Pods-BlackMarket/Pods-BlackMarket.release.xcconfig"; sourceTree = "<group>"; };
@@ -224,6 +232,9 @@
 				4794FA7625C8ED27005C2284 /* CustomView.swift */,
 				4794FA7B25C8ED52005C2284 /* CategoryCell.swift */,
 				4794FA8025C8ED7F005C2284 /* FeedCell.swift */,
+				47A4254725CA5F2600170854 /* ProfileHeader.swift */,
+				47A4257425CA6BCC00170854 /* ProfileCell.swift */,
+				47A4257925CA72D100170854 /* ProfileFooter.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -243,6 +254,7 @@
 			isa = PBXGroup;
 			children = (
 				4794FABF25C8EFB7005C2284 /* AuthenticationViewModel.swift */,
+				47A4256F25CA6AE100170854 /* ProfileViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -437,18 +449,22 @@
 				4794FA8125C8ED7F005C2284 /* FeedCell.swift in Sources */,
 				4794FA9F25C8EE83005C2284 /* MainTabController.swift in Sources */,
 				4794FAB625C8EF6B005C2284 /* CategoryController.swift in Sources */,
+				47A4257525CA6BCC00170854 /* ProfileCell.swift in Sources */,
 				4794FA8D25C8EE07005C2284 /* LoginController.swift in Sources */,
 				4794FA7225C8ED07005C2284 /* DividerView.swift in Sources */,
 				4794FAA425C8EEB9005C2284 /* ProfileController.swift in Sources */,
 				4794FACB25C8F036005C2284 /* CategoryData.swift in Sources */,
+				47A4257025CA6AE100170854 /* ProfileViewModel.swift in Sources */,
 				4794FA1F25C8EAAB005C2284 /* AppDelegate.swift in Sources */,
 				4794FABB25C8EF86005C2284 /* MessageContoller.swift in Sources */,
 				4794FAC025C8EFB7005C2284 /* AuthenticationViewModel.swift in Sources */,
 				4794FAB125C8EF26005C2284 /* FeedController.swift in Sources */,
 				4794FA2125C8EAAB005C2284 /* SceneDelegate.swift in Sources */,
 				4794FA6D25C8ECDB005C2284 /* CustomDontHaveAccountButton.swift in Sources */,
+				47A4257A25CA72D100170854 /* ProfileFooter.swift in Sources */,
 				4794FA7725C8ED27005C2284 /* CustomView.swift in Sources */,
 				4794FA6325C8EC8A005C2284 /* Extension.swift in Sources */,
+				47A4254825CA5F2600170854 /* ProfileHeader.swift in Sources */,
 				4794FA6825C8ECBB005C2284 /* CustomButton.swift in Sources */,
 				4794FA5625C8EC1A005C2284 /* CustomLabel.swift in Sources */,
 				4794FA5E25C8EC42005C2284 /* CustomTextField.swift in Sources */,

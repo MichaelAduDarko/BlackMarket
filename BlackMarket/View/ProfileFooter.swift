@@ -1,0 +1,52 @@
+//
+//  ProfileFooter.swift
+//  BlackMarket
+//
+//  Created by MICHAEL ADU DARKO on 2/3/21.
+//
+
+import UIKit
+
+class ProfileFooter: UIView {
+    
+    //MARK: - Properties
+    
+    private lazy var logoutButton : UIButton = {
+        let button = UIButton(type: .system)
+        button.setTitle("Logout", for: .normal)
+        button.setTitleColor(.white, for: .normal)
+        button.backgroundColor = .systemPink
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
+        button.layer.shadowRadius = 15
+        button.layer.borderWidth = 2
+        button.layer.cornerRadius = 20
+        button.layer.borderColor = #colorLiteral(red: 0.2213829578, green: 0.6727860964, blue: 0.9729384217, alpha: 1)
+        button.layer.masksToBounds = false
+        button.clipsToBounds = true
+        button.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        return button
+    }()
+    
+    
+    //MARK: - Lifecycle
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        
+        addSubview(logoutButton)
+        logoutButton.anchor(left: leftAnchor,
+                            right: rightAnchor,
+                            paddingLeft: 32,
+                            paddingRight: 32)
+        logoutButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        logoutButton.centerY(inView: self)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    //MARK:- Selector
+    
+    
+}

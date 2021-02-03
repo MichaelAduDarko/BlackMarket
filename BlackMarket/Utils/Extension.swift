@@ -19,15 +19,15 @@ extension UIColor {
 extension UIView {
     
     func anchor(top:NSLayoutYAxisAnchor? = nil,
-                    left:NSLayoutXAxisAnchor? = nil,
-                    bottom:NSLayoutYAxisAnchor? = nil,
-                    right: NSLayoutXAxisAnchor? = nil,
-                    paddingTop: CGFloat = 0,
-                    paddingLeft: CGFloat = 0,
-                    paddingBottom: CGFloat = 0,
-                    paddingRight: CGFloat = 0,
-                    width: CGFloat? = nil,
-                    height: CGFloat? = nil) {
+                left:NSLayoutXAxisAnchor? = nil,
+                bottom:NSLayoutYAxisAnchor? = nil,
+                right: NSLayoutXAxisAnchor? = nil,
+                paddingTop: CGFloat = 0,
+                paddingLeft: CGFloat = 0,
+                paddingBottom: CGFloat = 0,
+                paddingRight: CGFloat = 0,
+                width: CGFloat? = nil,
+                height: CGFloat? = nil) {
         
         translatesAutoresizingMaskIntoConstraints = false
         
@@ -53,48 +53,55 @@ extension UIView {
         }
         
         if let height = height {
-             heightAnchor.constraint(equalToConstant: height).isActive = true
+            heightAnchor.constraint(equalToConstant: height).isActive = true
         }
     }
     
     func centerX(inView view: UIView){
         centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
     }
-    func centerY(inView view: UIView){
-           centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
-       }
     
-    func setDimensions(height: CGFloat, width: CGFloat) {
+    func centerY(inView view: UIView, leftAnchor: NSLayoutXAxisAnchor? = nil,
+                 paddingLeft: CGFloat = 0, constant: CGFloat = 0) {
+        
         translatesAutoresizingMaskIntoConstraints = false
-        heightAnchor.constraint(equalToConstant: height).isActive = true
-        widthAnchor.constraint(equalToConstant: width).isActive = true
-    }
-    
-    func checkIfAutoLayOut() {
-        if frame == .zero {
-            translatesAutoresizingMaskIntoConstraints = false
+        centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: constant).isActive = true
+        
+        if let left = leftAnchor {
+            anchor(left: left, paddingLeft: paddingLeft)
         }
     }
-    
-}
-
-
-extension UIViewController {
-    
-    func configureNavigationBar(withTitle title: String, prefersLargeTitles: Bool){
-        let appearance = UINavigationBarAppearance()
-        appearance.configureWithOpaqueBackground()
-        appearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
-        appearance.backgroundColor = .backgroundColor
+        func setDimensions(height: CGFloat, width: CGFloat) {
+            translatesAutoresizingMaskIntoConstraints = false
+            heightAnchor.constraint(equalToConstant: height).isActive = true
+            widthAnchor.constraint(equalToConstant: width).isActive = true
+        }
         
-        navigationController?.navigationBar.standardAppearance = appearance
-        navigationController?.navigationBar.compactAppearance = appearance
-        navigationController?.navigationBar.scrollEdgeAppearance = appearance
+        func checkIfAutoLayOut() {
+            if frame == .zero {
+                translatesAutoresizingMaskIntoConstraints = false
+            }
+        }
         
-        navigationController?.navigationBar.prefersLargeTitles = prefersLargeTitles
-        navigationItem.title = title
-        navigationController?.navigationBar.tintColor = .white
-        navigationController?.navigationBar.isTranslucent = true
-        navigationController?.navigationBar.overrideUserInterfaceStyle = .dark
     }
-}
+    
+    
+    extension UIViewController {
+        
+        func configureNavigationBar(withTitle title: String, prefersLargeTitles: Bool){
+            let appearance = UINavigationBarAppearance()
+            appearance.configureWithOpaqueBackground()
+            appearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
+            appearance.backgroundColor = .backgroundColor
+            
+            navigationController?.navigationBar.standardAppearance = appearance
+            navigationController?.navigationBar.compactAppearance = appearance
+            navigationController?.navigationBar.scrollEdgeAppearance = appearance
+            
+            navigationController?.navigationBar.prefersLargeTitles = prefersLargeTitles
+            navigationItem.title = title
+            navigationController?.navigationBar.tintColor = .white
+            navigationController?.navigationBar.isTranslucent = true
+            navigationController?.navigationBar.overrideUserInterfaceStyle = .dark
+        }
+    }

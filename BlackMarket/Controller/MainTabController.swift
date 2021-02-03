@@ -38,7 +38,7 @@ class MainTabController: UITabBarController {
         nav4.tabBarItem.badgeValue = "10"
         nav4.title = "Message"
 
-        let profile = ProfileController()
+        let profile = ProfileController(style: .insetGrouped)
         let nav5 = templateNavigationController(image: UIImage(systemName: "person.fill"), rootviewController: profile)
         nav5.title = "Profile"
 
