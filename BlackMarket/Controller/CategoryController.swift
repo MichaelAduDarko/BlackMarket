@@ -82,6 +82,13 @@ extension CategoryController: UICollectionViewDelegateFlowLayout, UICollectionVi
         cell.data = data[indexPath.item]
         return cell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        let categoryDetail = DetailController()
+        self.navigationController?.pushViewController(categoryDetail, animated: true)
+        collectionView.deselectItem(at: indexPath, animated: true)
+    }
 }
 
 

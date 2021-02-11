@@ -43,19 +43,6 @@ class LoginController: UIViewController, UITextFieldDelegate {
         return button
     }()
     
-    private let dividerView = DividerView()
-    
-    
-    private let googleLoginButton: UIButton = {
-        let button = UIButton(type: .system)
-        button.setImage(#imageLiteral(resourceName: "btn_google_light_pressed_ios").withRenderingMode(.alwaysOriginal) , for: .normal)
-        button.setTitle(Constant.GoogleLogin, for: .normal)
-        button.setTitleColor(.white, for: .normal)
-        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
-        button.addTarget(self , action: #selector(handleGoogleButton), for: .touchUpInside)
-        return button
-    }()
-   
     //MARK:- Selectors
     
     @objc func handleLogin(){
@@ -152,8 +139,7 @@ class LoginController: UIViewController, UITextFieldDelegate {
         
         
         let stackView = UIStackView(arrangedSubviews:[emailTextfield,passwordTextField,
-                                                      loginButton, forgotPasswordButton,
-                                                      dividerView, googleLoginButton])
+                                                      loginButton, forgotPasswordButton])
         stackView.checkIfAutoLayOut()
         stackView.axis = .vertical
         stackView.spacing = 13

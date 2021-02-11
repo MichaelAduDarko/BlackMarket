@@ -42,6 +42,7 @@
 		47A4257025CA6AE100170854 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47A4256F25CA6AE100170854 /* ProfileViewModel.swift */; };
 		47A4257525CA6BCC00170854 /* ProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47A4257425CA6BCC00170854 /* ProfileCell.swift */; };
 		47A4257A25CA72D100170854 /* ProfileFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47A4257925CA72D100170854 /* ProfileFooter.swift */; };
+		47B916AD25D4DE2D00DD7634 /* DetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B916AC25D4DE2D00DD7634 /* DetailController.swift */; };
 		5A52EFB8222E27A35B0E1E8A /* libPods-BlackMarket.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7502830A4A51046405D93ED0 /* libPods-BlackMarket.a */; };
 /* End PBXBuildFile section */
 
@@ -104,6 +105,7 @@
 		47A4256F25CA6AE100170854 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		47A4257425CA6BCC00170854 /* ProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCell.swift; sourceTree = "<group>"; };
 		47A4257925CA72D100170854 /* ProfileFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileFooter.swift; sourceTree = "<group>"; };
+		47B916AC25D4DE2D00DD7634 /* DetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailController.swift; sourceTree = "<group>"; };
 		7502830A4A51046405D93ED0 /* libPods-BlackMarket.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BlackMarket.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		91FD1D11EF0A45D1C238FFD7 /* Pods-BlackMarket.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlackMarket.debug.xcconfig"; path = "Target Support Files/Pods-BlackMarket/Pods-BlackMarket.debug.xcconfig"; sourceTree = "<group>"; };
 		F9933F79783DE97FA86F8211 /* Pods-BlackMarket.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlackMarket.release.xcconfig"; path = "Target Support Files/Pods-BlackMarket/Pods-BlackMarket.release.xcconfig"; sourceTree = "<group>"; };
@@ -220,6 +222,7 @@
 				4794FAB525C8EF6B005C2284 /* CategoryController.swift */,
 				4794FABA25C8EF86005C2284 /* MessageContoller.swift */,
 				471BB5EE25D4C6E4005F4F13 /* AccountInfoController.swift */,
+				47B916AC25D4DE2D00DD7634 /* DetailController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -474,6 +477,7 @@
 				4794FA5E25C8EC42005C2284 /* CustomTextField.swift in Sources */,
 				4794FA7C25C8ED52005C2284 /* CategoryCell.swift in Sources */,
 				4794FA9525C8EE35005C2284 /* RegistrationController.swift in Sources */,
+				47B916AD25D4DE2D00DD7634 /* DetailController.swift in Sources */,
 				4794FAAC25C8EEE0005C2284 /* PostController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -580,7 +584,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -635,7 +639,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

@@ -16,7 +16,13 @@ class RegistrationController: UIViewController, UITextFieldDelegate {
     //MARK:- Properties
     private var viewModel = RegistrationViewModel()
     
-    private let signUpLabel = CustomLabel(title: Constant.SignUp, name: Font.Futura, fontSize: 40, color: .systemPink)
+    private let plusPhotoButton: UIButton = {
+        let button = UIButton (type: .system)
+        button.setImage(#imageLiteral(resourceName: "plus_photo"), for: .normal)
+        button.tintColor = .mainBlueTintColor
+        button.addTarget(self, action: #selector(handleAddProfilePhoto), for: .touchUpInside)
+        return button
+    }()
     
     private let emailTextfield =  CustomTextField(placeholder: Constant.Email ,autoCorrectionType: .no, secureTextEntry: false)
     
@@ -38,6 +44,10 @@ class RegistrationController: UIViewController, UITextFieldDelegate {
     }()
     
     //MARK:- Selectors
+    
+    @objc func handleAddProfilePhoto(){
+        
+    }
     
     @objc func handleSignUp(){
         print("12356830")
@@ -100,9 +110,9 @@ class RegistrationController: UIViewController, UITextFieldDelegate {
         view.backgroundColor = .backgroundColor
         navigationController?.navigationBar.isHidden = true
         
-        view.addSubview(signUpLabel)
-        signUpLabel.anchor(top: view.topAnchor, left: view.leftAnchor,
-                           paddingTop: 150, paddingLeft: 30)
+        view.addSubview(plusPhotoButton)
+        plusPhotoButton.centerX(inView: view, topAnchor: view.safeAreaLayoutGuide.topAnchor, paddingTop: 20)
+        plusPhotoButton.setDimensions(height: 128, width: 128)
         
         
         let stackView = UIStackView(arrangedSubviews: [emailTextfield,fullNameTextfield,passwordTextField, SignUpButton])
@@ -112,7 +122,7 @@ class RegistrationController: UIViewController, UITextFieldDelegate {
         
         
         view.addSubview(stackView)
-        stackView.anchor(top: signUpLabel.bottomAnchor, left: view.leftAnchor,
+        stackView.anchor(top: plusPhotoButton.bottomAnchor, left: view.leftAnchor,
                          right: view.rightAnchor, paddingTop: 20,
                          paddingLeft: 30, paddingRight: 30)
         
