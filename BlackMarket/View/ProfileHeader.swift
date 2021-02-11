@@ -14,7 +14,8 @@ class ProfileHeader: UIView {
     private let profileImageView: UIImageView = {
         let iv = UIImageView()
         iv.clipsToBounds = true
-        iv.contentMode = .scaleToFill
+        iv.image = #imageLiteral(resourceName: "IMG_0330")
+        iv.contentMode = .scaleAspectFill
         iv.layer.borderColor = UIColor.white.cgColor
         iv.layer.borderWidth = 4.0
         return iv

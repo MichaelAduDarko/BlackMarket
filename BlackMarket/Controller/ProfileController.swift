@@ -65,6 +65,12 @@ extension ProfileController {
         return cell
         
     }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+            let accountInfoVC = AccountInfoController()
+            navigationController?.pushViewController(accountInfoVC, animated: true)
+            tableView.deselectRow(at: indexPath, animated: true)
+        }
 }
 
 

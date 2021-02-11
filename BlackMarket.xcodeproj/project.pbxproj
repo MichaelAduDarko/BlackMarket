@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		471BB5EF25D4C6E4005F4F13 /* AccountInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 471BB5EE25D4C6E4005F4F13 /* AccountInfoController.swift */; };
 		4794FA1F25C8EAAB005C2284 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4794FA1E25C8EAAB005C2284 /* AppDelegate.swift */; };
 		4794FA2125C8EAAB005C2284 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4794FA2025C8EAAB005C2284 /* SceneDelegate.swift */; };
 		4794FA2625C8EAAB005C2284 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4794FA2425C8EAAB005C2284 /* Main.storyboard */; };
@@ -62,6 +63,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		471BB5EE25D4C6E4005F4F13 /* AccountInfoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountInfoController.swift; sourceTree = "<group>"; };
 		4794FA1B25C8EAAB005C2284 /* BlackMarket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlackMarket.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4794FA1E25C8EAAB005C2284 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4794FA2025C8EAAB005C2284 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -217,6 +219,7 @@
 				4794FAB025C8EF26005C2284 /* FeedController.swift */,
 				4794FAB525C8EF6B005C2284 /* CategoryController.swift */,
 				4794FABA25C8EF86005C2284 /* MessageContoller.swift */,
+				471BB5EE25D4C6E4005F4F13 /* AccountInfoController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -459,6 +462,7 @@
 				4794FABB25C8EF86005C2284 /* MessageContoller.swift in Sources */,
 				4794FAC025C8EFB7005C2284 /* AuthenticationViewModel.swift in Sources */,
 				4794FAB125C8EF26005C2284 /* FeedController.swift in Sources */,
+				471BB5EF25D4C6E4005F4F13 /* AccountInfoController.swift in Sources */,
 				4794FA2125C8EAAB005C2284 /* SceneDelegate.swift in Sources */,
 				4794FA6D25C8ECDB005C2284 /* CustomDontHaveAccountButton.swift in Sources */,
 				47A4257A25CA72D100170854 /* ProfileFooter.swift in Sources */,

@@ -27,6 +27,7 @@ struct Constant {
     static let PostLabel = "POST"
     static let ProfileLabel = "PROFILE"
     static let HomeLabel = "HOME"
+    static let AccountInfo = "Account Info"
      
 }
 

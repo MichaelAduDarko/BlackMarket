@@ -8,7 +8,7 @@
 import UIKit
 
 
-class CategoryController: UIViewController {
+class CategoryController: UIViewController{
     
     lazy var data: [categoryData] = ExampleData.data
     
@@ -53,6 +53,10 @@ class CategoryController: UIViewController {
         let searchController = UISearchController(searchResultsController: nil)
         navigationItem.searchController = searchController
         navigationItem.hidesSearchBarWhenScrolling = false
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "Search for a category"
+        searchController.searchResultsUpdater = self
+        definesPresentationContext = false
     }
 }
 
@@ -82,4 +86,10 @@ extension CategoryController: UICollectionViewDelegateFlowLayout, UICollectionVi
 
 
 
-
+extension CategoryController: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        let searchCategory = searchController.searchBar.text
+    }
+    
+    
+}

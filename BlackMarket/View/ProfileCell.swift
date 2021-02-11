@@ -36,6 +36,7 @@ class ProfileCell: UITableViewCell {
     
     private let titleLabel: UILabel = {
         let label = UILabel()
+        label.textColor = .white
         label.font = UIFont.systemFont(ofSize: 16)
         return label
     }()
@@ -56,6 +57,7 @@ class ProfileCell: UITableViewCell {
     }
     
     func configure() {
+        backgroundColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
         guard let viewModel = viewModel else { return }
         
         iconImage.image = UIImage(systemName: viewModel.iconImageName)

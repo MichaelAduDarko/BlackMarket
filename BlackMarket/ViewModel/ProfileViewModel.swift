@@ -9,19 +9,19 @@ import Foundation
 
 enum ProfileViewModel: Int, CaseIterable {
     case accountInfo
-    case settings
+    case listings
     
     var description: String {
         switch self {
         case .accountInfo : return "Account Info"
-        case .settings : return "Your Listings"
+        case .listings : return "Your Listings"
         }
     }
     
     var iconImageName: String {
         switch self {
         case .accountInfo : return "person.circle"
-        case .settings : return "gear"
+        case .listings : return "tag.fill"
         }
     }
     
