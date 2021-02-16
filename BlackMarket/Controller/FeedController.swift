@@ -19,7 +19,6 @@ class FeedController: UIViewController {
         cv.showsVerticalScrollIndicator = false
         cv.backgroundColor = .backgroundColor
         cv.register(FeedCell.self, forCellWithReuseIdentifier: "cell")
-
         return cv
     }()
 
@@ -77,4 +76,14 @@ extension FeedController: UICollectionViewDelegateFlowLayout, UICollectionViewDa
         cell.data = _data[indexPath.item]
         return cell
     }
+    
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        let categoryDetail = DetailController()
+        categoryDetail.modalPresentationStyle = .fullScreen
+        present(categoryDetail, animated: true, completion: nil)
+    }
+    
+    
 }

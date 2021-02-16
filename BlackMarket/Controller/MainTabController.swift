@@ -8,11 +8,27 @@ import UIKit
 
 class MainTabController: UITabBarController {
     
+    //MARK:- Properties
+    
+    private let postItemButton: PostCustomButton = {
+        let button = PostCustomButton()
+        button.addTarget(self, action: #selector(handlepostItemButton), for: .touchUpInside)
+        return button
+    }()
+    
     //MARK:- Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
         configureUI()
+    }
+    
+    //MARK:- Selector
+    
+    @objc func handlepostItemButton(){
+        let postItem = PostController()
+        postItem.modalPresentationStyle = .formSheet
+        present(postItem, animated: true, completion: nil)
     }
     
     //MARK:- ConfigureUI
@@ -27,11 +43,7 @@ class MainTabController: UITabBarController {
         let category = CategoryController()
         let nav2 = templateNavigationController(image: UIImage(systemName: "archivebox.fill"), rootviewController: category)
         nav2.title = "Categories"
-      
-
-        let post = PostController()
-        let nav3 = templateNavigationController(image: UIImage(systemName: "camera.on.rectangle.fill"), rootviewController: post)
-        nav3.title = "Post"
+ 
 
         let message = MessageContoller()
         let nav4 = templateNavigationController(image: UIImage(systemName: "bubble.right.fill"), rootviewController: message)
@@ -43,7 +55,7 @@ class MainTabController: UITabBarController {
         nav5.title = "Profile"
 
         
-        viewControllers = [nav1, nav2, nav3, nav4, nav5]
+        viewControllers = [nav1, nav2, nav4, nav5]
         
         guard  let items = tabBar.items else { return}
         
@@ -51,7 +63,10 @@ class MainTabController: UITabBarController {
             item.imageInsets = UIEdgeInsets(top: 10, left: 0, bottom: -10, right: 0)
         }
         
-      
+        
+        view.addSubview(postItemButton)
+        postItemButton.anchor( bottom: view.safeAreaLayoutGuide.bottomAnchor,right: view.rightAnchor,
+                               paddingBottom: 64, paddingRight: 16)
         
     }
     

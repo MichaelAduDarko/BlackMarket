@@ -9,7 +9,8 @@ import UIKit
 
 struct feedData {
     let image: UIImage
-    let name : String?
+    let productName : String?
+    let locationName: String?
 }
 
 class FeedCell: UICollectionViewCell {
@@ -35,6 +36,12 @@ class FeedCell: UICollectionViewCell {
         return label
     }()
     
+    let locationLabel: CustomLabel = {
+        let label = CustomLabel(title: "Location", name: Font.AvenirNext , fontSize: 14, color: #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1))
+        label.textAlignment = .left
+        return label
+    }()
+    
     
     //Mark: Init
     override init(frame: CGRect) {
@@ -55,14 +62,20 @@ class FeedCell: UICollectionViewCell {
     }
     
     func setUp(){
-        let imageHeight: CGFloat = contentView.bounds.size.height - 25
+        let imageHeight: CGFloat = contentView.bounds.size.height
         let imageWidth: CGFloat = contentView.bounds.size.width
         
-        contentView.addSubview(feedLabel)
-        feedLabel.anchor(left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, height: 25)
+        let stackView = UIStackView(arrangedSubviews: [feedLabel,locationLabel])
+        stackView.axis = .vertical
+        stackView.distribution = .fillEqually
+        
+        
+        
+        contentView.addSubview(stackView)
+        stackView.anchor(left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, height: 45)
         
         contentView.addSubview(feedImageView)
-        feedImageView.anchor(top:topAnchor, bottom: feedLabel.topAnchor, width: imageWidth, height: imageHeight)
+        feedImageView.anchor(top:topAnchor, bottom: stackView.topAnchor, paddingBottom: 5,width: imageWidth, height: imageHeight)
     }
     
     
@@ -70,7 +83,8 @@ class FeedCell: UICollectionViewCell {
         didSet {
             guard  let data = data else {return}
             feedImageView.image = data.image
-            feedLabel.text = data.name
+            feedLabel.text = data.productName
+            locationLabel.text = data.locationName
         }
     }
     

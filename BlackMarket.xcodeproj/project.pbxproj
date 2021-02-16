@@ -37,6 +37,8 @@
 		4794FAC525C8EFDB005C2284 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4794FAC425C8EFDB005C2284 /* Constants.swift */; };
 		4794FACB25C8F036005C2284 /* CategoryData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4794FACA25C8F036005C2284 /* CategoryData.swift */; };
 		4794FAD325C8F056005C2284 /* DummyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4794FAD225C8F056005C2284 /* DummyData.swift */; };
+		479B63A125DB47FC00ED0E6A /* CancelSystemButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479B63A025DB47FC00ED0E6A /* CancelSystemButton.swift */; };
+		479B63B825DB4CAE00ED0E6A /* PostCustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479B63B725DB4CAE00ED0E6A /* PostCustomButton.swift */; };
 		47A4253F25C8FF2D00170854 /* shoppin.json in Resources */ = {isa = PBXBuildFile; fileRef = 47A4253E25C8FF2D00170854 /* shoppin.json */; };
 		47A4254825CA5F2600170854 /* ProfileHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47A4254725CA5F2600170854 /* ProfileHeader.swift */; };
 		47A4257025CA6AE100170854 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47A4256F25CA6AE100170854 /* ProfileViewModel.swift */; };
@@ -100,6 +102,8 @@
 		4794FAC425C8EFDB005C2284 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		4794FACA25C8F036005C2284 /* CategoryData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryData.swift; sourceTree = "<group>"; };
 		4794FAD225C8F056005C2284 /* DummyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyData.swift; sourceTree = "<group>"; };
+		479B63A025DB47FC00ED0E6A /* CancelSystemButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancelSystemButton.swift; sourceTree = "<group>"; };
+		479B63B725DB4CAE00ED0E6A /* PostCustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCustomButton.swift; sourceTree = "<group>"; };
 		47A4253E25C8FF2D00170854 /* shoppin.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = shoppin.json; sourceTree = "<group>"; };
 		47A4254725CA5F2600170854 /* ProfileHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeader.swift; sourceTree = "<group>"; };
 		47A4256F25CA6AE100170854 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
@@ -241,6 +245,8 @@
 				47A4254725CA5F2600170854 /* ProfileHeader.swift */,
 				47A4257425CA6BCC00170854 /* ProfileCell.swift */,
 				47A4257925CA72D100170854 /* ProfileFooter.swift */,
+				479B63A025DB47FC00ED0E6A /* CancelSystemButton.swift */,
+				479B63B725DB4CAE00ED0E6A /* PostCustomButton.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -463,11 +469,13 @@
 				47A4257025CA6AE100170854 /* ProfileViewModel.swift in Sources */,
 				4794FA1F25C8EAAB005C2284 /* AppDelegate.swift in Sources */,
 				4794FABB25C8EF86005C2284 /* MessageContoller.swift in Sources */,
+				479B63B825DB4CAE00ED0E6A /* PostCustomButton.swift in Sources */,
 				4794FAC025C8EFB7005C2284 /* AuthenticationViewModel.swift in Sources */,
 				4794FAB125C8EF26005C2284 /* FeedController.swift in Sources */,
 				471BB5EF25D4C6E4005F4F13 /* AccountInfoController.swift in Sources */,
 				4794FA2125C8EAAB005C2284 /* SceneDelegate.swift in Sources */,
 				4794FA6D25C8ECDB005C2284 /* CustomDontHaveAccountButton.swift in Sources */,
+				479B63A125DB47FC00ED0E6A /* CancelSystemButton.swift in Sources */,
 				47A4257A25CA72D100170854 /* ProfileFooter.swift in Sources */,
 				4794FA7725C8ED27005C2284 /* CustomView.swift in Sources */,
 				4794FA6325C8EC8A005C2284 /* Extension.swift in Sources */,

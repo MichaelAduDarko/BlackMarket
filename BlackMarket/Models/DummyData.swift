@@ -6,18 +6,18 @@
 //
 
 struct dummyData {
-    static let _data = [feedData(image: #imageLiteral(resourceName: "cosmetics"), name: "$200. Makeup sffvvg"),
-                       feedData(image: #imageLiteral(resourceName: "appliances"), name: "$500. Samsung Tv"),
-                       feedData(image: #imageLiteral(resourceName: "food"), name: "$10. BreakFast sjkllsf"),
-                       feedData(image: #imageLiteral(resourceName: "clothes"), name: "$50. Blue jeans Jacket hjklls"),
-                       feedData(image: #imageLiteral(resourceName: "shoes"), name: "$250. Jordan 1"),
-                       feedData(image: #imageLiteral(resourceName: "cars"), name: "$8000. BMW 2018"),
-                       feedData(image: #imageLiteral(resourceName: "game"), name: "$60. ps4 Controller"),
-                       feedData(image: #imageLiteral(resourceName: "cosmetics"), name: "Cosmetics"),
-                       feedData(image: #imageLiteral(resourceName: "sports"), name: "$150. Addidas soccer cleats"),
-                       feedData(image: #imageLiteral(resourceName: "books"), name: "$10. Reading books dsffffssfsf"),
-                       feedData(image: #imageLiteral(resourceName: "furniture'"), name: "$200. Living room sofa fssfsf"),
-                       feedData(image: #imageLiteral(resourceName: "food"), name: "$15. Fried rice and chicken")
+    static let _data = [feedData(image: #imageLiteral(resourceName: "cosmetics"), productName: "$200. Makeup sffvvg", locationName: "Newark"),
+                        feedData(image: #imageLiteral(resourceName: "appliances"), productName: "$500. Samsung Tv", locationName: "New York"),
+                        feedData(image: #imageLiteral(resourceName: "food"), productName: "$10. BreakFast sjkllsf", locationName: "Brooklyn"),
+                        feedData(image: #imageLiteral(resourceName: "clothes"), productName: "$50. Blue jeans Jacket hjklls", locationName: "Bronx"),
+                        feedData(image: #imageLiteral(resourceName: "shoes"), productName: "$250. Jordan 1", locationName: "PA"),
+                        feedData(image: #imageLiteral(resourceName: "cars"), productName: "$8000. BMW 2018", locationName: "Philly"),
+                        feedData(image: #imageLiteral(resourceName: "game"), productName: "$60. ps4 Controller", locationName: "Ohio"),
+                        feedData(image: #imageLiteral(resourceName: "cosmetics"), productName: "Cosmetics", locationName: "Australia"),
+                        feedData(image: #imageLiteral(resourceName: "sports"), productName: "$150. Addidas soccer cleats", locationName: "Toronto"),
+                        feedData(image: #imageLiteral(resourceName: "books"), productName: "$10. Reading books dsffffssfsf", locationName: "Florida"),
+                        feedData(image: #imageLiteral(resourceName: "furniture'"), productName: "$200. Living room sofa fssfsf", locationName: "LA"),
+                        feedData(image: #imageLiteral(resourceName: "food"), productName: "$15. Fried rice and chicken", locationName: "Virginia")
                        ]
     
 }

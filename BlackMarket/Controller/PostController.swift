@@ -11,8 +11,13 @@ class PostController: UIViewController {
     
     //MARK:- Properties
     
-    private let titlelabel = CustomLabel(title: Constant.PostLabel, name: Font.Futura, fontSize: 30, color: .white)
+    private let titlelabel = CustomLabel(title: Constant.PostLabel, name: Font.Futura, fontSize: 25, color: .white)
     
+    private let cancelButton: CancelSystemButton = {
+        let button = CancelSystemButton()
+        button.addTarget(self, action: #selector(handleCancelButton), for: .touchUpInside)
+        return button
+    }()
     
     override func  viewDidLoad() {
         super.viewDidLoad()
@@ -22,7 +27,9 @@ class PostController: UIViewController {
     
     
     //MARK:- Selectors
-    
+    @objc func handleCancelButton(){
+        dismiss(animated: true, completion: nil)
+    }
     
     
     //MARK:- Helpers
@@ -31,10 +38,15 @@ class PostController: UIViewController {
         view.backgroundColor = .backgroundColor
         navigationController?.navigationBar.isHidden = true
         
-        view.addSubview(titlelabel)
-        titlelabel.anchor(top: view.safeAreaLayoutGuide.topAnchor,
+        let stackView = UIStackView(arrangedSubviews: [titlelabel, UIView(),cancelButton])
+        stackView.axis = .horizontal
+        stackView.distribution = .equalCentering
+        
+        
+        view.addSubview(stackView)
+        stackView.anchor(top: view.safeAreaLayoutGuide.topAnchor,
                           left: view.leftAnchor,
-                          paddingTop: 20, paddingLeft: 30)
+                          right: view.rightAnchor,paddingTop: 10, paddingLeft: 5, paddingRight: 5)
         
     }
 }
