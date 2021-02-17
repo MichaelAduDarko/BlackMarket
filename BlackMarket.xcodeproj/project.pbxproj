@@ -39,6 +39,7 @@
 		4794FAD325C8F056005C2284 /* DummyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4794FAD225C8F056005C2284 /* DummyData.swift */; };
 		479B63A125DB47FC00ED0E6A /* CancelSystemButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479B63A025DB47FC00ED0E6A /* CancelSystemButton.swift */; };
 		479B63B825DB4CAE00ED0E6A /* PostCustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479B63B725DB4CAE00ED0E6A /* PostCustomButton.swift */; };
+		479B63BD25DCA75300ED0E6A /* ListItemTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479B63BC25DCA75300ED0E6A /* ListItemTextField.swift */; };
 		47A4253F25C8FF2D00170854 /* shoppin.json in Resources */ = {isa = PBXBuildFile; fileRef = 47A4253E25C8FF2D00170854 /* shoppin.json */; };
 		47A4254825CA5F2600170854 /* ProfileHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47A4254725CA5F2600170854 /* ProfileHeader.swift */; };
 		47A4257025CA6AE100170854 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47A4256F25CA6AE100170854 /* ProfileViewModel.swift */; };
@@ -104,6 +105,7 @@
 		4794FAD225C8F056005C2284 /* DummyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyData.swift; sourceTree = "<group>"; };
 		479B63A025DB47FC00ED0E6A /* CancelSystemButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancelSystemButton.swift; sourceTree = "<group>"; };
 		479B63B725DB4CAE00ED0E6A /* PostCustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCustomButton.swift; sourceTree = "<group>"; };
+		479B63BC25DCA75300ED0E6A /* ListItemTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemTextField.swift; sourceTree = "<group>"; };
 		47A4253E25C8FF2D00170854 /* shoppin.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = shoppin.json; sourceTree = "<group>"; };
 		47A4254725CA5F2600170854 /* ProfileHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeader.swift; sourceTree = "<group>"; };
 		47A4256F25CA6AE100170854 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
@@ -247,6 +249,7 @@
 				47A4257925CA72D100170854 /* ProfileFooter.swift */,
 				479B63A025DB47FC00ED0E6A /* CancelSystemButton.swift */,
 				479B63B725DB4CAE00ED0E6A /* PostCustomButton.swift */,
+				479B63BC25DCA75300ED0E6A /* ListItemTextField.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -481,6 +484,7 @@
 				4794FA6325C8EC8A005C2284 /* Extension.swift in Sources */,
 				47A4254825CA5F2600170854 /* ProfileHeader.swift in Sources */,
 				4794FA6825C8ECBB005C2284 /* CustomButton.swift in Sources */,
+				479B63BD25DCA75300ED0E6A /* ListItemTextField.swift in Sources */,
 				4794FA5625C8EC1A005C2284 /* CustomLabel.swift in Sources */,
 				4794FA5E25C8EC42005C2284 /* CustomTextField.swift in Sources */,
 				4794FA7C25C8ED52005C2284 /* CategoryCell.swift in Sources */,
@@ -578,6 +582,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -592,6 +597,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "$(inherited)";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -639,6 +645,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -647,6 +654,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "$(inherited)";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;

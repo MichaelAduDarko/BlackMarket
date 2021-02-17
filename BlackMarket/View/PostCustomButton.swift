@@ -19,7 +19,7 @@ class PostCustomButton: UIButton {
         setDimensions(height: 50, width: 50)
         imageView?.setDimensions(height: 30, width: 30)
         layer.cornerRadius = 50 / 2
-        backgroundColor = #colorLiteral(red: 0, green: 0.2221861184, blue: 0.6626794934, alpha: 1)
+        backgroundColor = .mainBlueTintColor
         setImage(UIImage(systemName: "camera.on.rectangle.fill"), for: .normal)
     }
     
