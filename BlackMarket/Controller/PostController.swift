@@ -50,34 +50,28 @@ class PostController: UIViewController, UITextFieldDelegate {
     
     private let price: ListItemTextField = {
         let tf = ListItemTextField(placeHolder: "Price")
+        tf.keyboardType = .numberPad
         tf.heightAnchor.constraint(equalToConstant: 50).isActive = true
         tf.widthAnchor.constraint(equalToConstant: 12).isActive = true
         return tf
     }()
     
-   
     
-    private let descriptionTf: ListItemTextField = {
-        let tf = ListItemTextField(placeHolder: " ")
-        tf.heightAnchor.constraint(equalToConstant: 150).isActive = true
-        tf.widthAnchor.constraint(equalToConstant: 12).isActive = true
-        return tf
-    }()
-    
-    
+    private let descriptionTV = DescriptionTextView()
     
     override func  viewDidLoad() {
         super.viewDidLoad()
         configureUI()
+        tapOutsideToDimissKeyboard()
+        listItemTitle.delegate = self
         price.delegate = self
-        descriptionTf.delegate = self
-     
+        descriptionTV.delegate = self
         
-//        categoryPickerView.delegate = self
-//        categoryPickerView.dataSource = self
-//
+
         categoryPickerView.isHidden = true
     }
+    
+    
     
     
     
@@ -93,6 +87,10 @@ class PostController: UIViewController, UITextFieldDelegate {
         }
     }
     
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
     //MARK:- Helpers
     
     private func configureUI(){
@@ -116,7 +114,7 @@ class PostController: UIViewController, UITextFieldDelegate {
                   paddingLeft: 5, paddingRight: 5,height: 250)
         
         
-        let stackView = UIStackView(arrangedSubviews: [listItemTitle, price, descriptionTf])
+        let stackView = UIStackView(arrangedSubviews: [listItemTitle, price, descriptionTV])
         stackView.axis = .vertical
         stackView.spacing = 15
         
@@ -126,6 +124,35 @@ class PostController: UIViewController, UITextFieldDelegate {
         
         
     }
+    
+    func tapOutsideToDimissKeyboard(){
+        let tapOutside: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        tapOutside.cancelsTouchesInView = false
+        view.addGestureRecognizer(tapOutside)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
 }
 
 
+
+
+
+//MARK:- TextView Extension
+
+extension PostController: UITextViewDelegate {
+    
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        // get the current text, or use an empty string if that failed
+        let currentText = descriptionTV.text ?? ""
+
+        // attempt to read the range they are trying to change, or exit if we can't
+        guard let stringRange = Range(range, in: currentText) else { return false }
+
+        let updatedText = currentText.replacingCharacters(in: stringRange, with: text)
+        return updatedText.count <= 280
+    }
+}
