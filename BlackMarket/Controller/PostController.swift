@@ -57,7 +57,11 @@ class PostController: UIViewController, UITextFieldDelegate {
     }()
     
     
-    private let descriptionTV = DescriptionTextView()
+    private let descriptionTV :  DescriptionTextView = {
+        let tv = DescriptionTextView()
+        tv.addDoneButton(title: "Done", target: self, selector: #selector(tapDone(sender:)))
+        return tv
+    }()
     
     override func  viewDidLoad() {
         super.viewDidLoad()
@@ -87,6 +91,9 @@ class PostController: UIViewController, UITextFieldDelegate {
         }
     }
     
+    @objc func tapDone(sender: Any) {
+            self.view.endEditing(true)
+        }
     
     @objc func dismissKeyboard() {
         view.endEditing(true)

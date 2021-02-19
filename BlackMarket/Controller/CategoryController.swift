@@ -26,7 +26,6 @@ class CategoryController: UIViewController{
     
     override func viewDidLoad() {
         configureCategoryVC()
-        searchController()
         view.addSubview(collectionView)
         
         configureNavigationBar(withTitle: "Categories", prefersLargeTitles: true)
@@ -49,15 +48,6 @@ class CategoryController: UIViewController{
     
     }
     
-    private func searchController(){
-        let searchController = UISearchController(searchResultsController: nil)
-        navigationItem.searchController = searchController
-        navigationItem.hidesSearchBarWhenScrolling = false
-        searchController.obscuresBackgroundDuringPresentation = false
-        searchController.searchBar.placeholder = "Search for a category"
-        searchController.searchResultsUpdater = self
-        definesPresentationContext = false
-    }
 }
 
 extension CategoryController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource{
@@ -89,14 +79,4 @@ extension CategoryController: UICollectionViewDelegateFlowLayout, UICollectionVi
         self.navigationController?.pushViewController(categoryDetail, animated: true)
         collectionView.deselectItem(at: indexPath, animated: true)
     }
-}
-
-
-
-extension CategoryController: UISearchResultsUpdating {
-    func updateSearchResults(for searchController: UISearchController) {
-        let searchCategory = searchController.searchBar.text
-    }
-    
-    
 }
