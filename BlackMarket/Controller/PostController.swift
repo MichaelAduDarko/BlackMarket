@@ -13,9 +13,6 @@ class PostController: UIViewController, UITextFieldDelegate {
      
     //MARK:- Properties
     
-    let categoryPickerView: UIPickerView = UIPickerView()
-    
-    
     private let cancelButton: CancelSystemButton = {
         let button = CancelSystemButton()
         button.addTarget(self, action: #selector(handleCancelButton), for: .touchUpInside)
@@ -70,9 +67,6 @@ class PostController: UIViewController, UITextFieldDelegate {
         listItemTitle.delegate = self
         price.delegate = self
         descriptionTV.delegate = self
-        
-
-        categoryPickerView.isHidden = true
     }
     
     
@@ -83,13 +77,7 @@ class PostController: UIViewController, UITextFieldDelegate {
     @objc func handleCancelButton(){
         dismiss(animated: true, completion: nil)
     }
-    
-    @objc func handleCategoryButton(){
-        
-        if categoryPickerView.isHidden {
-            categoryPickerView.isHidden = false
-        }
-    }
+
     
     @objc func tapDone(sender: Any) {
             self.view.endEditing(true)

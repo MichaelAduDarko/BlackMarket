@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 class RegistrationController: UIViewController, UITextFieldDelegate {
     
@@ -16,11 +17,16 @@ class RegistrationController: UIViewController, UITextFieldDelegate {
     //MARK:- Properties
     private var viewModel = RegistrationViewModel()
     
+    private var profileImage: UIImage?
+    
     private let plusPhotoButton: UIButton = {
         let button = UIButton (type: .system)
         button.setImage(#imageLiteral(resourceName: "plus_photo"), for: .normal)
         button.tintColor = .mainBlueTintColor
         button.addTarget(self, action: #selector(handleAddProfilePhoto), for: .touchUpInside)
+        button.imageView?.contentMode = .scaleToFill
+        button.clipsToBounds = true
+        button.imageView?.clipsToBounds = true
         return button
     }()
     
@@ -47,10 +53,62 @@ class RegistrationController: UIViewController, UITextFieldDelegate {
     
     @objc func handleAddProfilePhoto(){
         
+        let imagePickerController = UIImagePickerController()
+        imagePickerController.delegate = self
+        present(imagePickerController, animated: true, completion: nil)
     }
     
+    
     @objc func handleSignUp(){
-        print("12356830")
+        guard let  email = emailTextfield.text else { return}
+        guard let fullname = fullNameTextfield.text else {return }
+        guard let password = passwordTextField.text else { return }
+        guard let profileImage = profileImage else { return }
+        
+        
+        guard let imageData = profileImage.jpegData(compressionQuality: 0.3 ) else { return }
+        
+        let fileName = NSUUID().uuidString
+        let ref = Storage.storage().reference(withPath: "/profile_image/\(fileName)")
+        
+        ref.putData(imageData, metadata: nil) { (meta, error) in
+            
+            if let error = error {
+                print("DEBUG: Fail to upload data \(error.localizedDescription)")
+                
+                return
+            }
+            
+            ref.downloadURL { (url, error) in
+                guard let profileImageuRL = url?.absoluteString else { return }
+                
+                
+                Auth.auth().createUser(withEmail: email, password: password) { (result, error) in
+                    if let error = error {
+                        print("DEBUG: Fail to create user \(error.localizedDescription)")
+                        return
+                    }
+                    guard let uid = result?.user.uid else { return }
+                    
+                    let data = ["email": email,
+                                "fullname": fullname,
+                                "profileIamgeUrl": profileImageuRL,
+                                "uid": uid] as [String : Any]
+                    
+                    Firestore.firestore().collection("users").document(uid).setData(data) { error in
+                        
+                        if let error = error {
+                            print("DEBUG: Fail to upload user data \(error.localizedDescription)")
+                            return
+                        }
+                        
+                        self.dismiss(animated: true, completion: nil)
+                    }
+                }
+            }
+        }
+        
+        
     }
     
     @objc func handleShowLogin(){
@@ -112,7 +170,7 @@ class RegistrationController: UIViewController, UITextFieldDelegate {
         
         view.addSubview(plusPhotoButton)
         plusPhotoButton.centerX(inView: view, topAnchor: view.safeAreaLayoutGuide.topAnchor, paddingTop: 20)
-        plusPhotoButton.setDimensions(height: 128, width: 128)
+        plusPhotoButton.setDimensions(height: 200, width: 200)
         
         
         let stackView = UIStackView(arrangedSubviews: [emailTextfield,fullNameTextfield,passwordTextField, SignUpButton])
@@ -146,4 +204,20 @@ class RegistrationController: UIViewController, UITextFieldDelegate {
     }
     
 
+}
+
+//MARK:- UIImagePickerControllerDelegate
+
+extension RegistrationController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        let image = info[.originalImage] as? UIImage
+        profileImage = image
+        plusPhotoButton.setImage(image?.withRenderingMode(.alwaysOriginal), for: .normal)
+        plusPhotoButton.layer.borderColor = UIColor(white: 1, alpha: 0.7).cgColor
+        plusPhotoButton.layer.borderWidth = 3.0
+        plusPhotoButton.layer.cornerRadius = 200 / 2
+        
+        dismiss(animated: true, completion: nil)
+    }
 }

@@ -7,9 +7,13 @@
 
 import UIKit
 
+protocol ProfileControllerDelegate: class {
+    func handleLogout()
+}
 
 class ProfileController: UITableViewController {
     
+    weak var delegate: ProfileControllerDelegate?
     //MARK:- Properties
     
   private lazy var headerView = ProfileHeader(frame: .init(x: 0, y: 0, width: view.frame.width, height: 380))
@@ -42,6 +46,7 @@ class ProfileController: UITableViewController {
         tableView.rowHeight = 64
         tableView.backgroundColor = .backgroundColor
         
+        footerView.delegate = self
         footerView.frame = .init(x: 0, y: 0, width: view.frame.width, height: 100)
         tableView.tableFooterView = footerView
     }
@@ -77,5 +82,21 @@ extension ProfileController {
 extension ProfileController {
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         return UIView()
+    }
+}
+
+
+extension ProfileController: ProfileFooterDelegate{
+    
+    func handleLogout(){
+        
+        let alert = UIAlertController(title: nil, message: "Are you sure you want to logout? ", preferredStyle: .actionSheet)
+        
+        alert.addAction(UIAlertAction(title: "Log out", style: .destructive, handler: { _ in
+            self.dismiss(animated: true, completion: nil)
+            self.delegate?.handleLogout()
+        }))
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        present(alert, animated: true, completion: nil)
     }
 }

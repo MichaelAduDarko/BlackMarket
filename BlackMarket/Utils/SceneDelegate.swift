@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -17,6 +18,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         window = UIWindow(windowScene: scene)
         let nav = UINavigationController(rootViewController: MainTabController())
+        nav.navigationBar.isHidden = true
         window?.rootViewController = nav
         window?.makeKeyAndVisible()
     }

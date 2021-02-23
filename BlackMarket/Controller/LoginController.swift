@@ -7,6 +7,7 @@
 
 import UIKit
 import Lottie
+import Firebase
 
 class LoginController: UIViewController, UITextFieldDelegate {
     
@@ -46,16 +47,22 @@ class LoginController: UIViewController, UITextFieldDelegate {
     //MARK:- Selectors
     
     @objc func handleLogin(){
-     print("12334")
+        guard let email = emailTextfield.text else { return}
+        guard let password = passwordTextField.text  else { return}
+      
+        
+        Auth.auth().signIn(withEmail: email, password: password) { result, error in
+            if let error = error {
+                print("DEBUG: Fail to login with error \(error.localizedDescription)")
+                return
+            }
+            self.dismiss(animated: true, completion: nil)
+        }
     }
     
     @objc func handleForgotPassword(){
         let controller = RessetPasswordController()
         navigationController?.pushViewController(controller, animated: true)
-    }
-    
-    @objc func handleGoogleButton(){
-        print("Google Button tapped ")
     }
     
     

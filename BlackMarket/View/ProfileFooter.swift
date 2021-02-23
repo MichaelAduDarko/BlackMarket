@@ -7,9 +7,15 @@
 
 import UIKit
 
+protocol ProfileFooterDelegate: class {
+    func handleLogout()
+}
+
 class ProfileFooter: UIView {
     
     //MARK: - Properties
+    
+    weak var delegate: ProfileFooterDelegate?
     
     private lazy var logoutButton : UIButton = {
         let button = UIButton(type: .system)
@@ -24,6 +30,7 @@ class ProfileFooter: UIView {
         button.layer.masksToBounds = false
         button.clipsToBounds = true
         button.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        button.addTarget(self , action: #selector(handleLogout), for: .touchUpInside)
         return button
     }()
     
@@ -47,6 +54,10 @@ class ProfileFooter: UIView {
     }
     
     //MARK:- Selector
+    
+    @objc func handleLogout(){
+        delegate?.handleLogout()
+    }
     
     
 }

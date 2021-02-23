@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		470E117725E49FD4000F4440 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 470E117625E49FD4000F4440 /* GoogleService-Info.plist */; };
 		471BB5EF25D4C6E4005F4F13 /* AccountInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 471BB5EE25D4C6E4005F4F13 /* AccountInfoController.swift */; };
 		4794FA1F25C8EAAB005C2284 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4794FA1E25C8EAAB005C2284 /* AppDelegate.swift */; };
 		4794FA2125C8EAAB005C2284 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4794FA2025C8EAAB005C2284 /* SceneDelegate.swift */; };
@@ -68,6 +69,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		470E117625E49FD4000F4440 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		471BB5EE25D4C6E4005F4F13 /* AccountInfoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountInfoController.swift; sourceTree = "<group>"; };
 		4794FA1B25C8EAAB005C2284 /* BlackMarket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlackMarket.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4794FA1E25C8EAAB005C2284 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -195,6 +197,7 @@
 				4794FA5225C8EB07005C2284 /* View */,
 				4794FA5125C8EAF9005C2284 /* Controller */,
 				4794FA2C25C8EAAD005C2284 /* Info.plist */,
+				470E117625E49FD4000F4440 /* GoogleService-Info.plist */,
 			);
 			path = BlackMarket;
 			sourceTree = "<group>";
@@ -315,6 +318,7 @@
 				4794FA1725C8EAAB005C2284 /* Sources */,
 				4794FA1825C8EAAB005C2284 /* Frameworks */,
 				4794FA1925C8EAAB005C2284 /* Resources */,
+				901095BF1320614D3AF79DEF /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -410,6 +414,7 @@
 			files = (
 				4794FA2B25C8EAAD005C2284 /* LaunchScreen.storyboard in Resources */,
 				47A4253F25C8FF2D00170854 /* shoppin.json in Resources */,
+				470E117725E49FD4000F4440 /* GoogleService-Info.plist in Resources */,
 				4794FA2825C8EAAD005C2284 /* Assets.xcassets in Resources */,
 				4794FA2625C8EAAB005C2284 /* Main.storyboard in Resources */,
 			);
@@ -432,6 +437,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		901095BF1320614D3AF79DEF /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BlackMarket/Pods-BlackMarket-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BlackMarket/Pods-BlackMarket-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BlackMarket/Pods-BlackMarket-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		F0400CB47578FEEF6643E407 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,7 +17,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         UITabBar.appearance().barTintColor = .backgroundColor
         UITabBar.appearance().tintColor = .mainBlueTintColor
+        
+        FirebaseApp.configure()
         return true
+        
+        
     }
 
     // MARK: UISceneSession Lifecycle
