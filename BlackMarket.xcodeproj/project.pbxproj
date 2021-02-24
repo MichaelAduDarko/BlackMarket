@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		47060D1525E5CE4000692096 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47060D1425E5CE4000692096 /* AuthService.swift */; };
 		470E117725E49FD4000F4440 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 470E117625E49FD4000F4440 /* GoogleService-Info.plist */; };
 		471BB5EF25D4C6E4005F4F13 /* AccountInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 471BB5EE25D4C6E4005F4F13 /* AccountInfoController.swift */; };
 		4794FA1F25C8EAAB005C2284 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4794FA1E25C8EAAB005C2284 /* AppDelegate.swift */; };
@@ -69,6 +70,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		47060D1425E5CE4000692096 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		470E117625E49FD4000F4440 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		471BB5EE25D4C6E4005F4F13 /* AccountInfoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountInfoController.swift; sourceTree = "<group>"; };
 		4794FA1B25C8EAAB005C2284 /* BlackMarket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlackMarket.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -164,6 +166,14 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		47060D1025E5CE0900692096 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				47060D1425E5CE4000692096 /* AuthService.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
 		4794FA1225C8EAAB005C2284 = {
 			isa = PBXGroup;
 			children = (
@@ -189,6 +199,7 @@
 		4794FA1D25C8EAAB005C2284 /* BlackMarket */ = {
 			isa = PBXGroup;
 			children = (
+				47060D1025E5CE0900692096 /* API */,
 				4794FAE325C8F5CF005C2284 /* Assets */,
 				4794FAC925C8F013005C2284 /* Models */,
 				4794FA8825C8ED9D005C2284 /* Storyboard */,
@@ -510,6 +521,7 @@
 				47A4254825CA5F2600170854 /* ProfileHeader.swift in Sources */,
 				4794FA6825C8ECBB005C2284 /* CustomButton.swift in Sources */,
 				479B63BD25DCA75300ED0E6A /* ListItemTextField.swift in Sources */,
+				47060D1525E5CE4000692096 /* AuthService.swift in Sources */,
 				4794FA5625C8EC1A005C2284 /* CustomLabel.swift in Sources */,
 				4794FA5E25C8EC42005C2284 /* CustomTextField.swift in Sources */,
 				4794FA7C25C8ED52005C2284 /* CategoryCell.swift in Sources */,

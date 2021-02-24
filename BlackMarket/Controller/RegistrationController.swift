@@ -65,50 +65,17 @@ class RegistrationController: UIViewController, UITextFieldDelegate {
         guard let password = passwordTextField.text else { return }
         guard let profileImage = profileImage else { return }
         
+        let credentilas = RegistrationCredentials(email: email, fullName: fullname, password: password, profileImage: profileImage)
         
-        guard let imageData = profileImage.jpegData(compressionQuality: 0.3 ) else { return }
         
-        let fileName = NSUUID().uuidString
-        let ref = Storage.storage().reference(withPath: "/profile_image/\(fileName)")
-        
-        ref.putData(imageData, metadata: nil) { (meta, error) in
+        AuthService.shared.createUser(credentials: credentilas) { error in
             
             if let error = error {
-                print("DEBUG: Fail to upload data \(error.localizedDescription)")
-                
+                print("DEBUG: \(error.localizedDescription)")
                 return
             }
-            
-            ref.downloadURL { (url, error) in
-                guard let profileImageuRL = url?.absoluteString else { return }
-                
-                
-                Auth.auth().createUser(withEmail: email, password: password) { (result, error) in
-                    if let error = error {
-                        print("DEBUG: Fail to create user \(error.localizedDescription)")
-                        return
-                    }
-                    guard let uid = result?.user.uid else { return }
-                    
-                    let data = ["email": email,
-                                "fullname": fullname,
-                                "profileIamgeUrl": profileImageuRL,
-                                "uid": uid] as [String : Any]
-                    
-                    Firestore.firestore().collection("users").document(uid).setData(data) { error in
-                        
-                        if let error = error {
-                            print("DEBUG: Fail to upload user data \(error.localizedDescription)")
-                            return
-                        }
-                        
-                        self.dismiss(animated: true, completion: nil)
-                    }
-                }
-            }
+            self.dismiss(animated: true, completion: nil)
         }
-        
-        
     }
     
     @objc func handleShowLogin(){
@@ -129,9 +96,9 @@ class RegistrationController: UIViewController, UITextFieldDelegate {
         } else {
             viewModel.password = sender.text
         }
-       checkFormStatus()
+        checkFormStatus()
     }
-
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -203,7 +170,7 @@ class RegistrationController: UIViewController, UITextFieldDelegate {
         return true
     }
     
-
+    
 }
 
 //MARK:- UIImagePickerControllerDelegate
