@@ -48,6 +48,7 @@
 		47A4257525CA6BCC00170854 /* ProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47A4257425CA6BCC00170854 /* ProfileCell.swift */; };
 		47A4257A25CA72D100170854 /* ProfileFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47A4257925CA72D100170854 /* ProfileFooter.swift */; };
 		47B916AD25D4DE2D00DD7634 /* DetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B916AC25D4DE2D00DD7634 /* DetailController.swift */; };
+		47CF510725E5DDBF0074712A /* ListingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CF510625E5DDBF0074712A /* ListingsController.swift */; };
 		47CFAF7225DF6160001DB8E6 /* DescriptionTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CFAF7125DF6160001DB8E6 /* DescriptionTextView.swift */; };
 		5A52EFB8222E27A35B0E1E8A /* libPods-BlackMarket.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7502830A4A51046405D93ED0 /* libPods-BlackMarket.a */; };
 /* End PBXBuildFile section */
@@ -117,6 +118,7 @@
 		47A4257425CA6BCC00170854 /* ProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCell.swift; sourceTree = "<group>"; };
 		47A4257925CA72D100170854 /* ProfileFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileFooter.swift; sourceTree = "<group>"; };
 		47B916AC25D4DE2D00DD7634 /* DetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailController.swift; sourceTree = "<group>"; };
+		47CF510625E5DDBF0074712A /* ListingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingsController.swift; sourceTree = "<group>"; };
 		47CFAF7125DF6160001DB8E6 /* DescriptionTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionTextView.swift; sourceTree = "<group>"; };
 		7502830A4A51046405D93ED0 /* libPods-BlackMarket.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BlackMarket.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		91FD1D11EF0A45D1C238FFD7 /* Pods-BlackMarket.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlackMarket.debug.xcconfig"; path = "Target Support Files/Pods-BlackMarket/Pods-BlackMarket.debug.xcconfig"; sourceTree = "<group>"; };
@@ -245,6 +247,7 @@
 				4794FABA25C8EF86005C2284 /* MessageContoller.swift */,
 				471BB5EE25D4C6E4005F4F13 /* AccountInfoController.swift */,
 				47B916AC25D4DE2D00DD7634 /* DetailController.swift */,
+				47CF510625E5DDBF0074712A /* ListingsController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -506,6 +509,7 @@
 				4794FAA425C8EEB9005C2284 /* ProfileController.swift in Sources */,
 				4794FACB25C8F036005C2284 /* CategoryData.swift in Sources */,
 				47A4257025CA6AE100170854 /* ProfileViewModel.swift in Sources */,
+				47CF510725E5DDBF0074712A /* ListingsController.swift in Sources */,
 				4794FA1F25C8EAAB005C2284 /* AppDelegate.swift in Sources */,
 				4794FABB25C8EF86005C2284 /* MessageContoller.swift in Sources */,
 				479B63B825DB4CAE00ED0E6A /* PostCustomButton.swift in Sources */,

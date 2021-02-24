@@ -73,10 +73,25 @@ extension ProfileController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//            let accountInfoVC = AccountInfoController()
+//            navigationController?.pushViewController(accountInfoVC, animated: true)
+//            tableView.deselectRow(at: indexPath, animated: true)
+        
+        guard let viewModel = ProfileViewModel(rawValue: indexPath.row) else { return }
+        
+        switch viewModel {
+        case .accountInfo:
             let accountInfoVC = AccountInfoController()
             navigationController?.pushViewController(accountInfoVC, animated: true)
             tableView.deselectRow(at: indexPath, animated: true)
+           
+        case .listings:
+            let listingsVC = ListingsController()
+            navigationController?.pushViewController(listingsVC, animated: true)
+            tableView.deselectRow(at: indexPath, animated: true)
+       
         }
+    }
 }
 
 
