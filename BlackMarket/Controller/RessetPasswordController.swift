@@ -7,7 +7,7 @@
 
 import UIKit
 
-class RessetPasswordController: UIViewController {
+class RessetPasswordController: UIViewController , UITextFieldDelegate {
     
     //MARK:- Properties
     
@@ -37,6 +37,8 @@ class RessetPasswordController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
+        tapOutsideToDimissKeyboard()
+        emailTextfield.delegate = self
         configureTextFieldObservers()
     }
     
@@ -49,6 +51,11 @@ class RessetPasswordController: UIViewController {
     
     @objc func handleDismissal(){
         navigationController?.popViewController(animated: true)
+    }
+    
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
     }
     
     
@@ -97,8 +104,20 @@ class RessetPasswordController: UIViewController {
                          right: view.rightAnchor, paddingTop: 15,
                          paddingLeft: 30, paddingRight: 30)
         
-
         
+    }
+    
+    //Keyboard dismissal when user taps outside
+    func tapOutsideToDimissKeyboard(){
+        let tapOutside: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        tapOutside.cancelsTouchesInView = false
+        view.addGestureRecognizer(tapOutside)
+    }
+    
+    //Return Key to dismiss keyboard
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
 }
 

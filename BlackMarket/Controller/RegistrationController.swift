@@ -158,13 +158,14 @@ class RegistrationController: UIViewController, UITextFieldDelegate {
         
     }
     
+    //Keyboard dismissal when user taps outside
     func tapOutsideToDimissKeyboard(){
         let tapOutside: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         tapOutside.cancelsTouchesInView = false
         view.addGestureRecognizer(tapOutside)
     }
     
-    
+    //Return Key to dismiss keyboard
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
