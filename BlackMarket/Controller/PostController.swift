@@ -7,12 +7,25 @@
 
 
 import UIKit
-
-
+import TTGTagCollectionView
 
 class PostController: UIViewController, UITextFieldDelegate {
      
     //MARK:- Properties
+    
+    private let categoryTag: TTGTextTagCollectionView = {
+        let tag = TTGTextTagCollectionView()
+        tag.alignment = .left
+    
+        let config = TTGTextTagConfig()
+        config.backgroundColor = .mainBlueTintColor
+        config.textColor = .white
+        config.borderColor = .systemPink
+        config.borderWidth = 2
+        tag.addTags(["Electronics", "Appliances", "Food", "Clothes", "Shoes", "Vehicles","Video Games", "Cosmetics", "Sports", "Book", "Furniture", "Others"], with: config)
+        return tag
+    }()
+    
     
     private let cancelButton: CancelSystemButton = {
         let button = CancelSystemButton()
@@ -68,9 +81,9 @@ class PostController: UIViewController, UITextFieldDelegate {
         listItemTitle.delegate = self
         price.delegate = self
         descriptionTV.delegate = self
+        
+        categoryTag.delegate = self
     }
-    
-    
     
     
     
@@ -90,6 +103,8 @@ class PostController: UIViewController, UITextFieldDelegate {
     //MARK:- Helpers
     
     private func configureUI(){
+        view.addSubview(categoryTag)
+        
         view.backgroundColor = .backgroundColor
         navigationController?.navigationBar.isHidden = true
         
@@ -110,7 +125,7 @@ class PostController: UIViewController, UITextFieldDelegate {
                   paddingLeft: 5, paddingRight: 5,height: 250)
         
         
-        let stackView = UIStackView(arrangedSubviews: [listItemTitle, price, descriptionTV])
+        let stackView = UIStackView(arrangedSubviews: [listItemTitle, price, categoryTag,descriptionTV])
         stackView.axis = .vertical
         stackView.spacing = 15
         
@@ -134,9 +149,6 @@ class PostController: UIViewController, UITextFieldDelegate {
 }
 
 
-
-
-
 //MARK:- TextView Extension
 
 extension PostController: UITextViewDelegate {
@@ -151,4 +163,11 @@ extension PostController: UITextViewDelegate {
         let updatedText = currentText.replacingCharacters(in: stringRange, with: text)
         return updatedText.count <= 280
     }
+}
+
+
+//MARK:- TTGTextTagCollectionViewDelegate
+
+extension PostController: TTGTextTagCollectionViewDelegate {
+    
 }

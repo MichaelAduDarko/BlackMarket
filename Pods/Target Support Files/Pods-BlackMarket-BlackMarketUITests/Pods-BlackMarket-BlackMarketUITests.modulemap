@@ -1,0 +1,6 @@
+framework module Pods_BlackMarket_BlackMarketUITests {
+  umbrella header "Pods-BlackMarket-BlackMarketUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -15,24 +15,24 @@ import UIKit
 public final class CompatibleAnimation: NSObject {
 
   @objc
-  static func named(_ productName: String) -> CompatibleAnimation {
-    return CompatibleAnimation(productName: productName)
+  static func named(_ name: String) -> CompatibleAnimation {
+    return CompatibleAnimation(name: name)
   }
 
   @objc
-  public init(productName: String, bundle: Bundle = Bundle.main) {
-    self.productName = productName
+  public init(name: String, bundle: Bundle = Bundle.main) {
+    self.name = name
     self.bundle = bundle
     super.init()
   }
 
   internal var animation: Animation? {
-    return Animation.named(productName, bundle: bundle)
+    return Animation.named(name, bundle: bundle)
   }
 
   // MARK: Private
 
-  private let productName: String
+  private let name: String
   private let bundle: Bundle
 }
 
