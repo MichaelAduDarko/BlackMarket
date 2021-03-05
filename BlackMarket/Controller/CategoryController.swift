@@ -75,7 +75,7 @@ extension CategoryController: UICollectionViewDelegateFlowLayout, UICollectionVi
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        let categoryDetail = DetailController()
+        let categoryDetail = CategoryDetails()
         self.navigationController?.pushViewController(categoryDetail, animated: true)
         collectionView.deselectItem(at: indexPath, animated: true)
     }

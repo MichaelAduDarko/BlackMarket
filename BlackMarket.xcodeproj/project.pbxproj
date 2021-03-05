@@ -40,6 +40,7 @@
 		4794FAC525C8EFDB005C2284 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4794FAC425C8EFDB005C2284 /* Constants.swift */; };
 		4794FACB25C8F036005C2284 /* CategoryData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4794FACA25C8F036005C2284 /* CategoryData.swift */; };
 		4794FAD325C8F056005C2284 /* DummyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4794FAD225C8F056005C2284 /* DummyData.swift */; };
+		4797A85D25F1E1D6004E50A9 /* CategoryDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4797A85C25F1E1D6004E50A9 /* CategoryDetails.swift */; };
 		479B63A125DB47FC00ED0E6A /* CancelSystemButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479B63A025DB47FC00ED0E6A /* CancelSystemButton.swift */; };
 		479B63B825DB4CAE00ED0E6A /* PostCustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479B63B725DB4CAE00ED0E6A /* PostCustomButton.swift */; };
 		479B63BD25DCA75300ED0E6A /* ListItemTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479B63BC25DCA75300ED0E6A /* ListItemTextField.swift */; };
@@ -114,6 +115,7 @@
 		4794FACA25C8F036005C2284 /* CategoryData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryData.swift; sourceTree = "<group>"; };
 		4794FAD225C8F056005C2284 /* DummyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyData.swift; sourceTree = "<group>"; };
 		4797A74925F04FB7004E50A9 /* libTTGTagCollectionView.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libTTGTagCollectionView.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		4797A85C25F1E1D6004E50A9 /* CategoryDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryDetails.swift; sourceTree = "<group>"; };
 		479B63A025DB47FC00ED0E6A /* CancelSystemButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancelSystemButton.swift; sourceTree = "<group>"; };
 		479B63B725DB4CAE00ED0E6A /* PostCustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCustomButton.swift; sourceTree = "<group>"; };
 		479B63BC25DCA75300ED0E6A /* ListItemTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemTextField.swift; sourceTree = "<group>"; };
@@ -266,6 +268,7 @@
 				471BB5EE25D4C6E4005F4F13 /* AccountInfoController.swift */,
 				47B916AC25D4DE2D00DD7634 /* DetailController.swift */,
 				47CF510625E5DDBF0074712A /* ListingsController.swift */,
+				4797A85C25F1E1D6004E50A9 /* CategoryDetails.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -582,6 +585,7 @@
 				4794FAD325C8F056005C2284 /* DummyData.swift in Sources */,
 				4794FA9A25C8EE62005C2284 /* RessetPasswordController.swift in Sources */,
 				4794FAC525C8EFDB005C2284 /* Constants.swift in Sources */,
+				4797A85D25F1E1D6004E50A9 /* CategoryDetails.swift in Sources */,
 				4794FA8125C8ED7F005C2284 /* FeedCell.swift in Sources */,
 				4794FA9F25C8EE83005C2284 /* MainTabController.swift in Sources */,
 				4794FAB625C8EF6B005C2284 /* CategoryController.swift in Sources */,
