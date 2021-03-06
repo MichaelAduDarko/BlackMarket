@@ -32,7 +32,7 @@ struct AuthService {
         ref.putData(imageData, metadata: nil) { (meta, error) in
             
             if let error = error {
-                print("DEBUG: Fail to upload data \(error.localizedDescription)")
+                completion!(error)
                 
                 return
             }
@@ -43,7 +43,8 @@ struct AuthService {
                 
                 Auth.auth().createUser(withEmail: credentials.email, password:  credentials.password) { (result, error) in
                     if let error = error {
-                        print("DEBUG: Fail to create user \(error.localizedDescription)")
+                        completion!(error)
+                        
                         return
                     }
                     guard let uid = result?.user.uid else { return }

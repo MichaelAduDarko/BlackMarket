@@ -8,6 +8,7 @@
 import UIKit
 import Lottie
 import Firebase
+import JGProgressHUD
 
 class LoginController: UIViewController, UITextFieldDelegate {
     
@@ -50,13 +51,17 @@ class LoginController: UIViewController, UITextFieldDelegate {
         guard let email = emailTextfield.text else { return}
         guard let password = passwordTextField.text  else { return}
         
+        showLoader(true, withText: "Loggin In")
+        
         AuthService.shared.logUserIn(withEmail: email, password: password) { (result, error) in
-            
             if let error = error {
-                
-                print("DEBUG: Failed to login \(error.localizedDescription)")
+                self.showLoader(false)
+                self.showError(error.localizedDescription)
                 return
+                
             }
+            
+            self.showLoader(false)
             self.dismiss(animated: true, completion: nil)
         }
     }

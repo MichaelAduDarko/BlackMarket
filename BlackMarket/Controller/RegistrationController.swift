@@ -7,6 +7,7 @@
 
 import UIKit
 import Firebase
+import JGProgressHUD
 
 class RegistrationController: UIViewController, UITextFieldDelegate {
     
@@ -65,15 +66,20 @@ class RegistrationController: UIViewController, UITextFieldDelegate {
         guard let password = passwordTextField.text else { return }
         guard let profileImage = profileImage else { return }
         
+        showLoader(true, withText: "Signing Up")
+        
         let credentilas = RegistrationCredentials(email: email, fullName: fullname, password: password, profileImage: profileImage)
         
         
         AuthService.shared.createUser(credentials: credentilas) { error in
             
             if let error = error {
-                print("DEBUG: \(error.localizedDescription)")
+                self.showLoader(false)
+                self.showError(error.localizedDescription)
                 return
             }
+            
+            self.showLoader(false)
             self.dismiss(animated: true, completion: nil)
         }
     }
