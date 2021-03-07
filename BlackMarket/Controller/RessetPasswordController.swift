@@ -6,15 +6,23 @@
 //
 
 import UIKit
+import Firebase
+import JGProgressHUD
+
+protocol ResetPasswordControllerDelegate: class {
+    func didSendResetPasswordLink()
+}
 
 class RessetPasswordController: UIViewController , UITextFieldDelegate {
     
     //MARK:- Properties
     
+    var email: String?
+    weak var delegate: ResetPasswordControllerDelegate?
+    
     private var viewModel = ResetPasswordViewModel()
     
     private let iconImage = UIImageView(image: #imageLiteral(resourceName: "icons8-reset-64"))
-    
     private let emailTextfield =  CustomTextField(placeholder: Constant.Email,autoCorrectionType: .no, secureTextEntry: false)
     
     private let resetPasswordButton: CustomButton = {
@@ -40,13 +48,31 @@ class RessetPasswordController: UIViewController , UITextFieldDelegate {
         tapOutsideToDimissKeyboard()
         emailTextfield.delegate = self
         configureTextFieldObservers()
+        loadEmail()
     }
     
     
     //MARK:- Selectors
     
     @objc func handleResetPassword(){
-        print("link have been sent to your email ")
+        guard let email = viewModel.email else { return }
+        
+        showLoader(true, withText: "Loading ..")
+        
+        AuthService.resetPassword(forEmail: email) { error  in
+            
+            if let error = error {
+                self.showLoader(false)
+                self.showError(error.localizedDescription)
+                
+                return
+                
+            }
+            
+            self.showLoader(false)
+            self.delegate?.didSendResetPasswordLink()
+           
+        }
     }
     
     @objc func handleDismissal(){
@@ -104,7 +130,14 @@ class RessetPasswordController: UIViewController , UITextFieldDelegate {
                          right: view.rightAnchor, paddingTop: 15,
                          paddingLeft: 30, paddingRight: 30)
         
+    }
+    
+    func loadEmail(){
+        guard let email = email else { return }
+        viewModel.email = email
+        emailTextfield.text = email
         
+        checkFormStatus()
     }
     
     //Keyboard dismissal when user taps outside
