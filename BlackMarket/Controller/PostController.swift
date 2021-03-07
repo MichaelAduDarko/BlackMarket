@@ -100,6 +100,18 @@ class PostController: UIViewController, UITextFieldDelegate {
     @objc func dismissKeyboard() {
         view.endEditing(true)
     }
+    
+    @objc func keyboardwillshow(){
+        if view.frame.origin.y == 0 {
+            self.view.frame.origin.y -= 280
+        }
+    }
+    
+    @objc func keyboardwillhide(){
+        if view.frame.origin.y != 0 {
+        view.frame.origin.y = 0
+        }
+    }
     //MARK:- Helpers
     
     private func configureUI(){
@@ -132,6 +144,9 @@ class PostController: UIViewController, UITextFieldDelegate {
         view.addSubview(stackView)
         stackView.anchor(top: bg.bottomAnchor, left: view.leftAnchor, right: view.rightAnchor, paddingTop: 10,
                             paddingLeft: 5, paddingRight: 5)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardwillshow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardwillhide), name: UIResponder.keyboardWillHideNotification, object: nil)
         
         
     }

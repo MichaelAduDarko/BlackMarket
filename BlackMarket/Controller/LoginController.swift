@@ -168,6 +168,7 @@ class LoginController: UIViewController, UITextFieldDelegate {
         dontHaveAccountButton.anchor(left: view.leftAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor,
                                      right: view.rightAnchor, paddingLeft: 32, paddingRight: 32)
         
+        
     }
     
     ///Tap outside to dimiss keyboard
