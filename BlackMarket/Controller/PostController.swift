@@ -45,11 +45,10 @@ class PostController: UIViewController, UITextFieldDelegate {
         return button
     }()
     
-    private let bg: UIView = {
-        let view = UIView()
-        view.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
-        view.layer.cornerRadius = 10
-        return view
+    private let productImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image  = #imageLiteral(resourceName: "cars")
+        return imageView
     }()
     
     private let listItemTitle: ListItemTextField = {
@@ -68,8 +67,9 @@ class PostController: UIViewController, UITextFieldDelegate {
     }()
     
     
-    private let descriptionTV :  DescriptionTextView = {
+    private let descriptionTV: DescriptionTextView = {
         let tv = DescriptionTextView()
+        tv.autocorrectionType = .no
         tv.addDoneButton(title: "Done", target: self, selector: #selector(tapDone(sender:)))
         return tv
     }()
@@ -103,7 +103,7 @@ class PostController: UIViewController, UITextFieldDelegate {
     
     @objc func keyboardwillshow(){
         if view.frame.origin.y == 0 {
-            self.view.frame.origin.y -= 280
+            self.view.frame.origin.y -= 240
         }
     }
     
@@ -132,18 +132,17 @@ class PostController: UIViewController, UITextFieldDelegate {
                          right: view.rightAnchor, paddingTop: 10)
         
         
-        view.addSubview(bg)
-        bg.anchor(top: topStack.bottomAnchor, left: view.leftAnchor, right: view.rightAnchor, paddingTop: 10,
+        view.addSubview(productImageView)
+        productImageView.anchor(top: topStack.bottomAnchor, left: view.leftAnchor, right: view.rightAnchor, paddingTop: 10,
                   paddingLeft: 5, paddingRight: 5,height: 250)
         
         
         let stackView = UIStackView(arrangedSubviews: [listItemTitle, price, categoryTag,descriptionTV])
         stackView.axis = .vertical
-        stackView.spacing = 15
+        stackView.spacing = 10
         
         view.addSubview(stackView)
-        stackView.anchor(top: bg.bottomAnchor, left: view.leftAnchor, right: view.rightAnchor, paddingTop: 10,
-                            paddingLeft: 5, paddingRight: 5)
+        stackView.anchor(top: productImageView.bottomAnchor, left: view.leftAnchor, right: view.rightAnchor, paddingTop: 10,paddingLeft: 5, paddingRight: 5)
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardwillshow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardwillhide), name: UIResponder.keyboardWillHideNotification, object: nil)
@@ -158,7 +157,7 @@ class PostController: UIViewController, UITextFieldDelegate {
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
+        textField.resignFirstResponder() 
         return true
     }
 }

@@ -23,17 +23,18 @@ class DescriptionTextView: UITextView {
     
     override init(frame: CGRect, textContainer: NSTextContainer?) {
         super.init(frame: frame, textContainer: textContainer)
-        
+       textContainerInset = UIEdgeInsets(top: 10, left: 5, bottom: 0, right: 0)
+       
         backgroundColor = UIColor(white: 1, alpha: 0.2)
         font = UIFont.systemFont(ofSize: 16)
-        isScrollEnabled = false
+        isScrollEnabled = true
         textColor = .white
         layer.cornerRadius = 15.0
         layer.shadowRadius = 15
         layer.borderWidth = 3
         layer.masksToBounds = true
         layer.borderColor = #colorLiteral(red: 0.2213829578, green: 0.6727860964, blue: 0.9729384217, alpha: 1)
-        heightAnchor.constraint(equalToConstant: 140).isActive = true
+        heightAnchor.constraint(equalToConstant: 80).isActive = true
         
         addSubview(placeholderLabel)
         placeholderLabel.anchor(top: topAnchor, left: leftAnchor,
