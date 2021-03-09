@@ -34,7 +34,7 @@ class DescriptionTextView: UITextView {
         layer.borderWidth = 3
         layer.masksToBounds = true
         layer.borderColor = #colorLiteral(red: 0.2213829578, green: 0.6727860964, blue: 0.9729384217, alpha: 1)
-        heightAnchor.constraint(equalToConstant: 80).isActive = true
+        heightAnchor.constraint(equalToConstant: 100).isActive = true
         
         addSubview(placeholderLabel)
         placeholderLabel.anchor(top: topAnchor, left: leftAnchor,

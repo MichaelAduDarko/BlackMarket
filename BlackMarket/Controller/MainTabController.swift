@@ -61,8 +61,8 @@ class MainTabController: UITabBarController, UINavigationControllerDelegate {
     //MARK:- Selector
     
     @objc func handlepostItemButton(){
-        let postItem = PostController()
-        postItem.modalPresentationStyle = .formSheet
+        let postItem = UINavigationController(rootViewController: PostController())
+        postItem.modalPresentationStyle = .fullScreen
         present(postItem, animated: true, completion: nil)
     }
     

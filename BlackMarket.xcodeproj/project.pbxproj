@@ -11,6 +11,7 @@
 		47060D1525E5CE4000692096 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47060D1425E5CE4000692096 /* AuthService.swift */; };
 		470E117725E49FD4000F4440 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 470E117625E49FD4000F4440 /* GoogleService-Info.plist */; };
 		471BB5EF25D4C6E4005F4F13 /* AccountInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 471BB5EE25D4C6E4005F4F13 /* AccountInfoController.swift */; };
+		4791869A25F7293600BD2CBF /* StackScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4791869925F7293600BD2CBF /* StackScrollView.swift */; };
 		4794FA1F25C8EAAB005C2284 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4794FA1E25C8EAAB005C2284 /* AppDelegate.swift */; };
 		4794FA2125C8EAAB005C2284 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4794FA2025C8EAAB005C2284 /* SceneDelegate.swift */; };
 		4794FA2625C8EAAB005C2284 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4794FA2425C8EAAB005C2284 /* Main.storyboard */; };
@@ -79,6 +80,7 @@
 		47060D1425E5CE4000692096 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		470E117625E49FD4000F4440 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		471BB5EE25D4C6E4005F4F13 /* AccountInfoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountInfoController.swift; sourceTree = "<group>"; };
+		4791869925F7293600BD2CBF /* StackScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackScrollView.swift; sourceTree = "<group>"; };
 		4794FA1B25C8EAAB005C2284 /* BlackMarket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlackMarket.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4794FA1E25C8EAAB005C2284 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4794FA2025C8EAAB005C2284 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -291,6 +293,7 @@
 				479B63B725DB4CAE00ED0E6A /* PostCustomButton.swift */,
 				479B63BC25DCA75300ED0E6A /* ListItemTextField.swift */,
 				47CFAF7125DF6160001DB8E6 /* DescriptionTextView.swift */,
+				4791869925F7293600BD2CBF /* StackScrollView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -608,6 +611,7 @@
 				47A4257A25CA72D100170854 /* ProfileFooter.swift in Sources */,
 				4794FA7725C8ED27005C2284 /* CustomView.swift in Sources */,
 				4794FA6325C8EC8A005C2284 /* Extension.swift in Sources */,
+				4791869A25F7293600BD2CBF /* StackScrollView.swift in Sources */,
 				47A4254825CA5F2600170854 /* ProfileHeader.swift in Sources */,
 				4794FA6825C8ECBB005C2284 /* CustomButton.swift in Sources */,
 				479B63BD25DCA75300ED0E6A /* ListItemTextField.swift in Sources */,

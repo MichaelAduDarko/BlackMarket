@@ -13,6 +13,8 @@ class PostController: UIViewController, UITextFieldDelegate {
      
     //MARK:- Properties
     
+    let stackScrollView = StackScrollView()
+     
     private let categoryTag: TTGTextTagCollectionView = {
         let tag = TTGTextTagCollectionView()
         tag.alignment = .left
@@ -34,19 +36,9 @@ class PostController: UIViewController, UITextFieldDelegate {
     }()
     
     
-    private let doneButton: UIButton = {
-        let button = UIButton()
-        button.setDimensions(height: 40, width: 40)
-        button.imageView?.setDimensions(height: 26, width: 26)
-        button.layer.cornerRadius = 40 / 2
-        button.tintColor = .white
-        button.backgroundColor = .systemGreen
-        button.setImage(UIImage(systemName: "checkmark"), for: .normal)
-        return button
-    }()
-    
     private let productImageView: UIImageView = {
         let imageView = UIImageView()
+        imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.image  = #imageLiteral(resourceName: "cars")
         return imageView
     }()
@@ -62,7 +54,7 @@ class PostController: UIViewController, UITextFieldDelegate {
         let tf = ListItemTextField(placeHolder: "Price")
         tf.keyboardType = .numberPad
         tf.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        tf.widthAnchor.constraint(equalToConstant: 12).isActive = true
+        tf.widthAnchor.constraint(equalToConstant: 10).isActive = true
         return tf
     }()
     
@@ -89,7 +81,7 @@ class PostController: UIViewController, UITextFieldDelegate {
     
     //MARK:- Selectors
     @objc func handleCancelButton(){
-        dismiss(animated: true, completion: nil)
+         navigationController?.dismiss(animated: true, completion: nil)
     }
 
     
@@ -100,51 +92,49 @@ class PostController: UIViewController, UITextFieldDelegate {
     @objc func dismissKeyboard() {
         view.endEditing(true)
     }
-    
-    @objc func keyboardwillshow(){
-        if view.frame.origin.y == 0 {
-            self.view.frame.origin.y -= 240
-        }
-    }
+
     
     @objc func keyboardwillhide(){
-        if view.frame.origin.y != 0 {
-        view.frame.origin.y = 0
-        }
+        stackScrollView.contentInset = .zero
     }
+    
+    @objc func keyboardWillShow(notification: NSNotification) {
+            guard let keyboardFrame = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue else { return }
+            stackScrollView.contentInset.bottom = view.convert(keyboardFrame.cgRectValue, from: nil).size.height
+        }
+    
     //MARK:- Helpers
     
     private func configureUI(){
-        view.addSubview(categoryTag)
-        
+        navigationController?.navigationBar.barTintColor = .backgroundColor
         view.backgroundColor = .backgroundColor
-        navigationController?.navigationBar.isHidden = true
+       
+        navigationItem.leftBarButtonItem = leftBarButtonItem(selector: #selector(handleCancelButton))
+        navigationItem.rightBarButtonItem = rightBarButtonItem(selector: #selector(handleCancelButton))
         
-        let topStack = UIStackView(arrangedSubviews: [doneButton,  UIView(),cancelButton])
-        topStack.axis = .horizontal
-        topStack.distribution = .equalCentering
-        topStack.isLayoutMarginsRelativeArrangement = true
-        topStack.layoutMargins = .init(top: 0, left: 16, bottom: 0, right: 16)
+        stackScrollView.backgroundColor = .backgroundColor
+        view.addSubview(stackScrollView)
+        NSLayoutConstraint.activate([
+            stackScrollView.topAnchor.constraint(equalTo: view.topAnchor),
+            stackScrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            stackScrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            stackScrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+        ])
         
-        view.addSubview(topStack)
-        topStack.anchor(top: view.safeAreaLayoutGuide.topAnchor,
-                         left: view.leftAnchor,
-                         right: view.rightAnchor, paddingTop: 10)
-        
-        
-        view.addSubview(productImageView)
-        productImageView.anchor(top: topStack.bottomAnchor, left: view.leftAnchor, right: view.rightAnchor, paddingTop: 10,
-                  paddingLeft: 5, paddingRight: 5,height: 250)
-        
-        
+        stackScrollView.insertView(productImageView)
+        NSLayoutConstraint.activate([
+            productImageView.topAnchor.constraint(equalTo: stackScrollView.topAnchor, constant: 10),
+            productImageView.leadingAnchor.constraint(equalTo: stackScrollView.leadingAnchor, constant: 5),
+            productImageView.trailingAnchor.constraint(equalTo: stackScrollView.trailingAnchor, constant: -5),
+            productImageView.heightAnchor.constraint(equalToConstant: 250),
+        ])
+
         let stackView = UIStackView(arrangedSubviews: [listItemTitle, price, categoryTag,descriptionTV])
         stackView.axis = .vertical
         stackView.spacing = 10
+        stackScrollView.insertView(stackView)
         
-        view.addSubview(stackView)
-        stackView.anchor(top: productImageView.bottomAnchor, left: view.leftAnchor, right: view.rightAnchor, paddingTop: 10,paddingLeft: 5, paddingRight: 5)
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardwillshow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardwillhide), name: UIResponder.keyboardWillHideNotification, object: nil)
         
         
@@ -175,7 +165,7 @@ extension PostController: UITextViewDelegate {
         guard let stringRange = Range(range, in: currentText) else { return false }
 
         let updatedText = currentText.replacingCharacters(in: stringRange, with: text)
-        return updatedText.count <= 280
+        return updatedText.count <= 240
     }
 }
 
@@ -185,3 +175,37 @@ extension PostController: UITextViewDelegate {
 extension PostController: TTGTextTagCollectionViewDelegate {
     
 }
+
+extension PostController {
+    
+    private func leftBarButtonItem(selector: Selector) -> UIBarButtonItem {
+        let button = UIButton(type: .custom)
+        button.setDimensions(height: 40, width: 40)
+        button.tintColor = .white
+        button.imageView?.setDimensions(height: 26, width: 26)
+        button.layer.cornerRadius = 40 / 2
+        button.backgroundColor = .systemRed
+        button.setImage(UIImage(systemName: "xmark"), for: .normal)
+        
+        return makeBarButtonItem(button: button, selector: selector)
+    }
+    
+    private func rightBarButtonItem(selector: Selector) -> UIBarButtonItem {
+        let button = UIButton(type: .custom)
+        button.setDimensions(height: 40, width: 40)
+        button.imageView?.setDimensions(height: 26, width: 26)
+        button.layer.cornerRadius = 40 / 2
+        button.tintColor = .white
+        button.backgroundColor = .systemGreen
+        button.setImage(UIImage(systemName: "checkmark"), for: .normal)
+        
+        return makeBarButtonItem(button: button, selector: selector)
+    }
+    
+    private func makeBarButtonItem(button: UIButton, selector: Selector) -> UIBarButtonItem {
+        button.addTarget(self, action: selector, for: .touchUpInside)
+        
+        return UIBarButtonItem(customView: button)
+    }
+}
+
