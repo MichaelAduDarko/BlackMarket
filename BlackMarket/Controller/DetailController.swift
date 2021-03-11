@@ -7,7 +7,7 @@
 
 import UIKit
 
-class DetailController: UIViewController {
+class DetailController: UIViewController{
     
     
     //MARK:- Propeties
@@ -33,14 +33,14 @@ class DetailController: UIViewController {
     
     private let priceTag = CustomLabel(title: "$200", name: Font.AvenirNext, fontSize: 20 , color: .white)
     
+    private let userLocation = CustomLabel(title: "Newark", name: Font.AvenirNext, fontSize: 15 , color: .gray)
+    
     private let descriptionTitle = CustomLabel(title: "Description", name: Font.Futura, fontSize: 25 , color: .systemPink)
     
     private let itemDescription = CustomLabel(title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", name: Font.AvenirNext, fontSize: 20 , color: .white)
     
-    private let messagetextView: DescriptionTextView = {
-        let tv = DescriptionTextView()
-        tv.autocorrectionType = .no
-        tv.addDoneButton(title: "Done", target: self, selector: #selector(tapDone(sender:)))
+    private lazy var messageView: CustomInputAccessoryView = {
+        let tv = CustomInputAccessoryView()
         return tv
     }()
     
@@ -49,6 +49,7 @@ class DetailController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configure()
+
     }
     
     
@@ -58,10 +59,6 @@ class DetailController: UIViewController {
         
     }
     
-    
-    @objc func tapDone(sender: Any) {
-            self.view.endEditing(true)
-        }
     
     @objc func keyboardwillhide(){
         stackScrollView.contentInset = .zero
@@ -94,7 +91,7 @@ class DetailController: UIViewController {
         
         
         
-        let stackView = UIStackView(arrangedSubviews: [imageBg,itemtitle, priceTitle, priceTag, descriptionTitle, itemDescription, messagetextView])
+        let stackView = UIStackView(arrangedSubviews: [imageBg,itemtitle, priceTitle, priceTag,userLocation ,messageView, descriptionTitle, itemDescription])
         stackView.spacing = 10
         stackView.axis = .vertical
         
@@ -103,9 +100,6 @@ class DetailController: UIViewController {
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardwillhide), name: UIResponder.keyboardWillHideNotification, object: nil)
-        
-        
-        
-        
+    
     }
 }

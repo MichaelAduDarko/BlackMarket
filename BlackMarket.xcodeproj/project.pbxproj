@@ -12,6 +12,7 @@
 		470E117725E49FD4000F4440 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 470E117625E49FD4000F4440 /* GoogleService-Info.plist */; };
 		471BB5EF25D4C6E4005F4F13 /* AccountInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 471BB5EE25D4C6E4005F4F13 /* AccountInfoController.swift */; };
 		4791869A25F7293600BD2CBF /* StackScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4791869925F7293600BD2CBF /* StackScrollView.swift */; };
+		4791869F25F7C8DB00BD2CBF /* CustomInputAccessoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4791869E25F7C8DB00BD2CBF /* CustomInputAccessoryView.swift */; };
 		4794FA1F25C8EAAB005C2284 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4794FA1E25C8EAAB005C2284 /* AppDelegate.swift */; };
 		4794FA2125C8EAAB005C2284 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4794FA2025C8EAAB005C2284 /* SceneDelegate.swift */; };
 		4794FA2625C8EAAB005C2284 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4794FA2425C8EAAB005C2284 /* Main.storyboard */; };
@@ -81,6 +82,7 @@
 		470E117625E49FD4000F4440 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		471BB5EE25D4C6E4005F4F13 /* AccountInfoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountInfoController.swift; sourceTree = "<group>"; };
 		4791869925F7293600BD2CBF /* StackScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackScrollView.swift; sourceTree = "<group>"; };
+		4791869E25F7C8DB00BD2CBF /* CustomInputAccessoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomInputAccessoryView.swift; sourceTree = "<group>"; };
 		4794FA1B25C8EAAB005C2284 /* BlackMarket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlackMarket.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4794FA1E25C8EAAB005C2284 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4794FA2025C8EAAB005C2284 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -305,6 +307,7 @@
 				4794FA2025C8EAAB005C2284 /* SceneDelegate.swift */,
 				4794FA1E25C8EAAB005C2284 /* AppDelegate.swift */,
 				4794FAC425C8EFDB005C2284 /* Constants.swift */,
+				4791869E25F7C8DB00BD2CBF /* CustomInputAccessoryView.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -620,6 +623,7 @@
 				4794FA5E25C8EC42005C2284 /* CustomTextField.swift in Sources */,
 				4794FA7C25C8ED52005C2284 /* CategoryCell.swift in Sources */,
 				47CFAF7225DF6160001DB8E6 /* DescriptionTextView.swift in Sources */,
+				4791869F25F7C8DB00BD2CBF /* CustomInputAccessoryView.swift in Sources */,
 				4794FA9525C8EE35005C2284 /* RegistrationController.swift in Sources */,
 				47B916AD25D4DE2D00DD7634 /* DetailController.swift in Sources */,
 				4794FAAC25C8EEE0005C2284 /* PostController.swift in Sources */,
