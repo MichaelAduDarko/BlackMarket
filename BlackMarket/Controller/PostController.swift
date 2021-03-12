@@ -35,13 +35,12 @@ class PostController: UIViewController, UITextFieldDelegate {
         return button
     }()
     
-    
-    private let productImageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.image  = #imageLiteral(resourceName: "cars")
-        return imageView
+    private let imageContainerViewController: ImageContainerViewController = {
+        let container = ImageContainerViewController()
+        container.view.translatesAutoresizingMaskIntoConstraints = false
+        return container
     }()
+    
     
     private let listItemTitle: ListItemTextField = {
         let tf = ListItemTextField(placeHolder: "Title")
@@ -75,6 +74,8 @@ class PostController: UIViewController, UITextFieldDelegate {
         descriptionTV.delegate = self
         
         categoryTag.delegate = self
+        
+        imageContainerViewController.delegate = self
     }
     
     
@@ -121,12 +122,12 @@ class PostController: UIViewController, UITextFieldDelegate {
             stackScrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
         
-        stackScrollView.insertView(productImageView)
+        stackScrollView.insertView(imageContainerViewController.view)
         NSLayoutConstraint.activate([
-            productImageView.topAnchor.constraint(equalTo: stackScrollView.topAnchor, constant: 10),
-            productImageView.leadingAnchor.constraint(equalTo: stackScrollView.leadingAnchor, constant: 5),
-            productImageView.trailingAnchor.constraint(equalTo: stackScrollView.trailingAnchor, constant: -5),
-            productImageView.heightAnchor.constraint(equalToConstant: 250),
+            imageContainerViewController.view.topAnchor.constraint(equalTo: stackScrollView.topAnchor, constant: 10),
+            imageContainerViewController.view.leadingAnchor.constraint(equalTo: stackScrollView.leadingAnchor, constant: 5),
+            imageContainerViewController.view.trailingAnchor.constraint(equalTo: stackScrollView.trailingAnchor, constant: -5),
+            imageContainerViewController.view.heightAnchor.constraint(equalToConstant: 250),
         ])
 
         let stackView = UIStackView(arrangedSubviews: [listItemTitle, price, categoryTag,descriptionTV])
@@ -174,6 +175,12 @@ extension PostController: UITextViewDelegate {
 
 extension PostController: TTGTextTagCollectionViewDelegate {
     
+}
+
+extension PostController: ImageContainerDelegate {
+    func didTapContainer() {
+        print("ImageContainerDelegate")
+    }
 }
 
 extension PostController {

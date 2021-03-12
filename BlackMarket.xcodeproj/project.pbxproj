@@ -43,6 +43,7 @@
 		4794FACB25C8F036005C2284 /* CategoryData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4794FACA25C8F036005C2284 /* CategoryData.swift */; };
 		4794FAD325C8F056005C2284 /* DummyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4794FAD225C8F056005C2284 /* DummyData.swift */; };
 		4797A85D25F1E1D6004E50A9 /* CategoryDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4797A85C25F1E1D6004E50A9 /* CategoryDetails.swift */; };
+		4799CCC225FAE8D1008923F7 /* ImageContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4799CCC125FAE8D1008923F7 /* ImageContainer.swift */; };
 		479B63A125DB47FC00ED0E6A /* CancelSystemButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479B63A025DB47FC00ED0E6A /* CancelSystemButton.swift */; };
 		479B63B825DB4CAE00ED0E6A /* PostCustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479B63B725DB4CAE00ED0E6A /* PostCustomButton.swift */; };
 		479B63BD25DCA75300ED0E6A /* ListItemTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479B63BC25DCA75300ED0E6A /* ListItemTextField.swift */; };
@@ -120,6 +121,7 @@
 		4794FAD225C8F056005C2284 /* DummyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyData.swift; sourceTree = "<group>"; };
 		4797A74925F04FB7004E50A9 /* libTTGTagCollectionView.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libTTGTagCollectionView.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		4797A85C25F1E1D6004E50A9 /* CategoryDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryDetails.swift; sourceTree = "<group>"; };
+		4799CCC125FAE8D1008923F7 /* ImageContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageContainer.swift; sourceTree = "<group>"; };
 		479B63A025DB47FC00ED0E6A /* CancelSystemButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancelSystemButton.swift; sourceTree = "<group>"; };
 		479B63B725DB4CAE00ED0E6A /* PostCustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCustomButton.swift; sourceTree = "<group>"; };
 		479B63BC25DCA75300ED0E6A /* ListItemTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemTextField.swift; sourceTree = "<group>"; };
@@ -308,6 +310,7 @@
 				4794FA1E25C8EAAB005C2284 /* AppDelegate.swift */,
 				4794FAC425C8EFDB005C2284 /* Constants.swift */,
 				4791869E25F7C8DB00BD2CBF /* CustomInputAccessoryView.swift */,
+				4799CCC125FAE8D1008923F7 /* ImageContainer.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -625,6 +628,7 @@
 				47CFAF7225DF6160001DB8E6 /* DescriptionTextView.swift in Sources */,
 				4791869F25F7C8DB00BD2CBF /* CustomInputAccessoryView.swift in Sources */,
 				4794FA9525C8EE35005C2284 /* RegistrationController.swift in Sources */,
+				4799CCC225FAE8D1008923F7 /* ImageContainer.swift in Sources */,
 				47B916AD25D4DE2D00DD7634 /* DetailController.swift in Sources */,
 				4794FAAC25C8EEE0005C2284 /* PostController.swift in Sources */,
 			);
