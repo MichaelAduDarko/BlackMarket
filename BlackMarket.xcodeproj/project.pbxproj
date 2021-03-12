@@ -11,6 +11,7 @@
 		47060D1525E5CE4000692096 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47060D1425E5CE4000692096 /* AuthService.swift */; };
 		470E117725E49FD4000F4440 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 470E117625E49FD4000F4440 /* GoogleService-Info.plist */; };
 		471BB5EF25D4C6E4005F4F13 /* AccountInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 471BB5EE25D4C6E4005F4F13 /* AccountInfoController.swift */; };
+		475460DE25FAF9390067B97E /* ImageContainerViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 475460DD25FAF9390067B97E /* ImageContainerViewCell.swift */; };
 		4791869A25F7293600BD2CBF /* StackScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4791869925F7293600BD2CBF /* StackScrollView.swift */; };
 		4791869F25F7C8DB00BD2CBF /* CustomInputAccessoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4791869E25F7C8DB00BD2CBF /* CustomInputAccessoryView.swift */; };
 		4794FA1F25C8EAAB005C2284 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4794FA1E25C8EAAB005C2284 /* AppDelegate.swift */; };
@@ -82,6 +83,7 @@
 		47060D1425E5CE4000692096 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		470E117625E49FD4000F4440 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		471BB5EE25D4C6E4005F4F13 /* AccountInfoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountInfoController.swift; sourceTree = "<group>"; };
+		475460DD25FAF9390067B97E /* ImageContainerViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageContainerViewCell.swift; sourceTree = "<group>"; };
 		4791869925F7293600BD2CBF /* StackScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackScrollView.swift; sourceTree = "<group>"; };
 		4791869E25F7C8DB00BD2CBF /* CustomInputAccessoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomInputAccessoryView.swift; sourceTree = "<group>"; };
 		4794FA1B25C8EAAB005C2284 /* BlackMarket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlackMarket.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -202,6 +204,15 @@
 			path = API;
 			sourceTree = "<group>";
 		};
+		475460DC25FAF91A0067B97E /* ImageContainer */ = {
+			isa = PBXGroup;
+			children = (
+				4799CCC125FAE8D1008923F7 /* ImageContainer.swift */,
+				475460DD25FAF9390067B97E /* ImageContainerViewCell.swift */,
+			);
+			path = ImageContainer;
+			sourceTree = "<group>";
+		};
 		4794FA1225C8EAAB005C2284 = {
 			isa = PBXGroup;
 			children = (
@@ -305,12 +316,12 @@
 		4794FA5325C8EBA8005C2284 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				475460DC25FAF91A0067B97E /* ImageContainer */,
 				4794FA6225C8EC8A005C2284 /* Extension.swift */,
 				4794FA2025C8EAAB005C2284 /* SceneDelegate.swift */,
 				4794FA1E25C8EAAB005C2284 /* AppDelegate.swift */,
 				4794FAC425C8EFDB005C2284 /* Constants.swift */,
 				4791869E25F7C8DB00BD2CBF /* CustomInputAccessoryView.swift */,
-				4799CCC125FAE8D1008923F7 /* ImageContainer.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -620,6 +631,7 @@
 				4791869A25F7293600BD2CBF /* StackScrollView.swift in Sources */,
 				47A4254825CA5F2600170854 /* ProfileHeader.swift in Sources */,
 				4794FA6825C8ECBB005C2284 /* CustomButton.swift in Sources */,
+				475460DE25FAF9390067B97E /* ImageContainerViewCell.swift in Sources */,
 				479B63BD25DCA75300ED0E6A /* ListItemTextField.swift in Sources */,
 				47060D1525E5CE4000692096 /* AuthService.swift in Sources */,
 				4794FA5625C8EC1A005C2284 /* CustomLabel.swift in Sources */,

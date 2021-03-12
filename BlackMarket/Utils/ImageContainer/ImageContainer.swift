@@ -86,8 +86,3 @@ extension ImageContainerViewController: UICollectionViewDataSource {
     
     
 }
-
-//MARK:-  Move into its own class
-class ImageContainerViewCell: UICollectionViewCell {
-    static let reuseIdentifier = "imageContainerViewCellIdentifier"
-}
