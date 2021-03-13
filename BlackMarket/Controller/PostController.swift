@@ -14,6 +14,8 @@ class PostController: UIViewController, UITextFieldDelegate {
     //MARK:- Properties
     
     let stackScrollView = StackScrollView()
+    
+    private var imagePicker: ImagePicker?
      
     private let categoryTag: TTGTextTagCollectionView = {
         let tag = TTGTextTagCollectionView()
@@ -177,9 +179,20 @@ extension PostController: TTGTextTagCollectionViewDelegate {
     
 }
 
+// MARK: - ImageContainerDelegate
 extension PostController: ImageContainerDelegate {
     func didTapContainer() {
-        print("ImageContainerDelegate")
+        imagePicker = ImagePicker(delegate: self)
+        imagePicker?.present(from: self)
+    }
+}
+
+// MARK: - ImagePickerDelegate
+extension PostController: ImagePickerDelegate {
+    func didSelect(image: UIImage?) {
+        guard let _image = image else { return }
+        
+        self.imageContainerViewController.update(with: [_image])
     }
 }
 

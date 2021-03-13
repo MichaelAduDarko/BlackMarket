@@ -18,6 +18,8 @@ class ImageContainerViewController: UIViewController {
     
     weak var delegate: ImageContainerDelegate?
     
+    private lazy var tapGesture = self.makeGestureRecognizer()
+    
     private lazy var collectionView: UICollectionView = {
         let flowLayout = UICollectionViewFlowLayout()
         flowLayout.scrollDirection = .horizontal
@@ -25,7 +27,8 @@ class ImageContainerViewController: UIViewController {
         collection.translatesAutoresizingMaskIntoConstraints = false
         collection.backgroundColor = .red
         collection.dataSource = self
-        collection.addGestureRecognizer(makeGestureRecognizer())
+        collection.delegate = self
+        collection.addGestureRecognizer(tapGesture)
         collection.register(ImageContainerViewCell.self, forCellWithReuseIdentifier: ImageContainerViewCell.reuseIdentifier)
         
         return collection
@@ -38,13 +41,12 @@ class ImageContainerViewController: UIViewController {
         configure()
     }
     
-    public func configure(with image: [UIImage]) {
-        dataSource = image
+    public func update(with data: [UIImage]) {
+        guard !data.isEmpty else { return }
         
-        updateDatasource()
-    }
-    
-    public func updateDatasource() {
+        collectionView.removeGestureRecognizer(tapGesture)
+        
+        dataSource = data
         collectionView.reloadData()
     }
 }
@@ -81,8 +83,15 @@ extension ImageContainerViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ImageContainerViewCell.reuseIdentifier, for: indexPath) as! ImageContainerViewCell
         
+        let data = dataSource[indexPath.row]
+        cell.setData(data)
+        
         return cell
     }
-    
-    
+}
+
+extension ImageContainerViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: collectionView.frame.width, height: collectionView.frame.height)
+    }
 }

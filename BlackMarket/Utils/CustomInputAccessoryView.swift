@@ -52,6 +52,7 @@ class CustomInputAccessoryView: UIView {
         sendButton.anchor(top: topAnchor, right: rightAnchor, paddingTop: 4, paddingRight: 8)
         sendButton.setDimensions(height: 50, width: 50)
         
+        messageInputTextView.addDoneButton(title: "Done", target: self, selector: #selector(tapDone))
         addSubview(messageInputTextView)
         messageInputTextView.anchor(top: topAnchor, left: leftAnchor,
                                     bottom: safeAreaLayoutGuide.bottomAnchor,
@@ -91,5 +92,11 @@ class CustomInputAccessoryView: UIView {
     func clearMessageText(){
         messageInputTextView.text = nil
         placeHolderLabel.isHidden = false
+    }
+}
+
+extension CustomInputAccessoryView {
+    @objc func tapDone(sender: Any) {
+        messageInputTextView.endEditing(true)
     }
 }
