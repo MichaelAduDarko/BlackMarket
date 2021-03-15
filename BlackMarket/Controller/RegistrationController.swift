@@ -8,6 +8,7 @@
 import UIKit
 import Firebase
 import JGProgressHUD
+import SCLAlertView
 
 class RegistrationController: UIViewController, UITextFieldDelegate {
     
@@ -71,11 +72,11 @@ class RegistrationController: UIViewController, UITextFieldDelegate {
         let credentilas = RegistrationCredentials(email: email, fullName: fullname, password: password, profileImage: profileImage)
         
         
-        AuthService.shared.createUser(credentials: credentilas) { error in
+        AuthService.shared.createUser(credentials: credentilas) { (error) in
             
             if let error = error {
                 self.showLoader(false)
-                self.showError(error.localizedDescription)
+                SCLAlertView().showError("error", subTitle: error.localizedDescription)
                 return
             }
             

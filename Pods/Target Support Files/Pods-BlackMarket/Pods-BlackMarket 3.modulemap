@@ -1,6 +1,0 @@
-framework module Pods_BlackMarket {
-  umbrella header "Pods-BlackMarket-umbrella.h"
-
-  export *
-  module * { export * }
-}

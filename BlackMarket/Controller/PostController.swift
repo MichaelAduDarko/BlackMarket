@@ -129,7 +129,7 @@ class PostController: UIViewController, UITextFieldDelegate {
             imageContainerViewController.view.topAnchor.constraint(equalTo: stackScrollView.topAnchor, constant: 10),
             imageContainerViewController.view.leadingAnchor.constraint(equalTo: stackScrollView.leadingAnchor, constant: 5),
             imageContainerViewController.view.trailingAnchor.constraint(equalTo: stackScrollView.trailingAnchor, constant: -5),
-            imageContainerViewController.view.heightAnchor.constraint(equalToConstant: 250),
+            imageContainerViewController.view.heightAnchor.constraint(equalToConstant: 350),
         ])
 
         let stackView = UIStackView(arrangedSubviews: [listItemTitle, price, categoryTag,descriptionTV])

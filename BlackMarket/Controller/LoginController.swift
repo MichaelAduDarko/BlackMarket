@@ -9,6 +9,7 @@ import UIKit
 import Lottie
 import Firebase
 import JGProgressHUD
+import SCLAlertView
 
 class LoginController: UIViewController, UITextFieldDelegate {
     
@@ -56,13 +57,22 @@ class LoginController: UIViewController, UITextFieldDelegate {
         AuthService.shared.logUserIn(withEmail: email, password: password) { (result, error) in
             if let error = error {
                 self.showLoader(false)
-                self.showError(error.localizedDescription)
+                SCLAlertView().showError("error", subTitle: error.localizedDescription)
                 return
                 
+            } else {
+                
+                if result != nil {
+                    self.showLoader(false)
+                    SCLAlertView().showSuccess("Success", subTitle: "You have successfully logged In")
+        
+                }
+                
+                self.dismiss(animated: true, completion: nil)
+                return
+
             }
             
-            self.showLoader(false)
-            self.dismiss(animated: true, completion: nil)
         }
     }
     

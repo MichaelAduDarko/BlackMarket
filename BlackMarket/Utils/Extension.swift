@@ -122,7 +122,7 @@ extension UIView {
                 UIViewController.hub.show(in: view)
             } else {
                 UIViewController.hub.dismiss()
-            } 
+            }
         }
         
         func showError(_ errorMessage: String){

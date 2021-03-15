@@ -8,6 +8,7 @@
 import UIKit
 import Firebase
 import JGProgressHUD
+import SCLAlertView
 
 protocol ResetPasswordControllerDelegate: class {
     func didSendResetPasswordLink()
@@ -63,7 +64,7 @@ class RessetPasswordController: UIViewController , UITextFieldDelegate {
             
             if let error = error {
                 self.showLoader(false)
-                self.showError(error.localizedDescription)
+                SCLAlertView().showError("error", subTitle: error.localizedDescription)
                 
                 return
                 
