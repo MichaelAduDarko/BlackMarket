@@ -6,15 +6,18 @@
 //
 
 import UIKit
+import SDWebImage
 
 class ProfileHeader: UIView {
     
-    
+    var user : User? {
+        didSet { populateUserData()}
+    }
     //MARK:- Properties
     private let profileImageView: UIImageView = {
         let iv = UIImageView()
         iv.clipsToBounds = true
-        iv.image = #imageLiteral(resourceName: "IMG_0330")
+//        iv.image = #imageLiteral(resourceName: "IMG_0330")
         iv.contentMode = .scaleAspectFill
         iv.layer.borderColor = UIColor.white.cgColor
         iv.layer.borderWidth = 4.0
@@ -23,14 +26,14 @@ class ProfileHeader: UIView {
     
 
     private let fullnameLabel : CustomLabel = {
-        let label = CustomLabel(title: "Michael Adu Darko", name: Font.Futura, fontSize: 20, color: .white)
+        let label = CustomLabel(name: Font.Futura, fontSize: 20, color: .white)
         label.textAlignment = .center
         return label
     }()
     
     
     private let usernameLabel : CustomLabel = {
-        let label = CustomLabel(title: "@Bronzy", name: Font.Futura, fontSize: 16, color: .white)
+        let label = CustomLabel(name: Font.Futura, fontSize: 16, color: .white)
         label.textAlignment = .center
         return label
     }()
@@ -41,6 +44,7 @@ class ProfileHeader: UIView {
         super.init(frame: frame)
         ConfigureUI()
         backgroundColor = .backgroundColor
+        populateUserData()
         
     }
     
@@ -70,6 +74,17 @@ class ProfileHeader: UIView {
     }
     
     //MARK:- Helpers
+    
+    func populateUserData(){
+        guard let user  = user else { return }
+        fullnameLabel.text = user.fullname
+        
+        guard let url = URL(string: user.profileImageUrl) else { return }
+        profileImageView.sd_setImage(with: url)
+        
+       
+        
+    }
     
     func configureGradientLayer(){
         let gradient = CAGradientLayer()

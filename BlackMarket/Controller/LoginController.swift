@@ -19,9 +19,17 @@ class LoginController: UIViewController, UITextFieldDelegate {
     
     private var viewModel = LoginViewModel()
 
-    private let titlelabel = CustomLabel(title: Constant.TitleLabel, name: Font.Futura, fontSize: 30, color: .white)
+    private let titlelabel: CustomLabel = {
+        let label = CustomLabel( name: Font.Futura, fontSize: 30, color: .white)
+        label.text = Constant.TitleLabel
+      return label
+    }()
     
-    private let logInLabel = CustomLabel(title: Constant.LogInLabel, name: Font.Futura, fontSize: 25, color: .systemPink)
+    private let logInLabel: CustomLabel = {
+        let label = CustomLabel( name: Font.Futura, fontSize: 25, color: .systemPink)
+        label.text = Constant.LogInLabel
+       return label
+    }()
     
     
     private let emailTextfield =  CustomTextField(placeholder: Constant.Email,autoCorrectionType: .no, secureTextEntry: false)

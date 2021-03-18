@@ -38,7 +38,7 @@ struct AuthService {
             }
             
             ref.downloadURL { (url, error) in
-                guard let profileImageuRL = url?.absoluteString else { return }
+                guard let profileImageUrl = url?.absoluteString else { return }
                 
                 
                 Auth.auth().createUser(withEmail: credentials.email, password:  credentials.password) { (result, error) in
@@ -51,10 +51,10 @@ struct AuthService {
                     
                     let data = ["email": credentials.email,
                                 "fullname": credentials.fullName,
-                                "profileIamgeUrl": profileImageuRL,
+                                "profileIamgeUrl": profileImageUrl,
                                 "uid": uid] as [String : Any]
                     
-                    Firestore.firestore().collection("users").document(uid).setData(data, completion: completion)
+                    COLLECTION_USERS.document(uid).setData(data, completion: completion)
         
                 }
             }

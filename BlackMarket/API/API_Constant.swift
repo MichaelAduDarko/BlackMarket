@@ -9,3 +9,5 @@ import Firebase
 
 let REF_POSTITEM  = Firestore.firestore().collection("item")
 
+let COLLECTION_USERS = Firestore.firestore().collection("users")
+

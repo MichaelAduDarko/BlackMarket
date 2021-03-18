@@ -10,10 +10,10 @@ import UIKit
 class CustomLabel: UILabel {
     
     
-    init(title: String, name fontName: String, fontSize: CGFloat, color: UIColor) {
+    init( name fontName: String, fontSize: CGFloat, color: UIColor) {
         super.init(frame: .zero)
             
-         text = title
+//         text = title
          font = UIFont(name: fontName, size: fontSize)
          numberOfLines = 0
          textColor = color

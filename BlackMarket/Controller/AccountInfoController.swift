@@ -19,7 +19,7 @@ class AccountInfoController: UIViewController {
         return button
     }()
     
-   private let titlelabel = CustomLabel(title: Constant.AccountInfo, name: Font.Futura, fontSize: 30, color: .white)
+   private let titlelabel = CustomLabel( name: Font.Futura, fontSize: 30, color: .white)
     
     override func viewDidLoad() {
         super.viewDidLoad()

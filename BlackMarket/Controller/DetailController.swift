@@ -27,17 +27,17 @@ class DetailController: UIViewController{
         return view
     }()
     
-    private let itemtitle = CustomLabel(title: "Play Station 5", name: Font.Futura, fontSize: 30 , color: .white)
+    private let itemtitle = CustomLabel( name: Font.Futura, fontSize: 30 , color: .white)
     
-    private let priceTitle = CustomLabel(title: "Price", name: Font.Futura, fontSize: 25 , color: .systemPink)
+    private let priceTitle = CustomLabel( name: Font.Futura, fontSize: 25 , color: .systemPink)
     
-    private let priceTag = CustomLabel(title: "$200", name: Font.AvenirNext, fontSize: 20 , color: .white)
+    private let priceTag = CustomLabel( name: Font.AvenirNext, fontSize: 20 , color: .white)
     
-    private let userLocation = CustomLabel(title: "Newark", name: Font.AvenirNext, fontSize: 15 , color: .gray)
+    private let userLocation = CustomLabel( name: Font.AvenirNext, fontSize: 15 , color: .gray)
     
-    private let descriptionTitle = CustomLabel(title: "Description", name: Font.Futura, fontSize: 25 , color: .systemPink)
+    private let descriptionTitle = CustomLabel( name: Font.Futura, fontSize: 25 , color: .systemPink)
     
-    private let itemDescription = CustomLabel(title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", name: Font.AvenirNext, fontSize: 20 , color: .white)
+    private let itemDescription = CustomLabel( name: Font.AvenirNext, fontSize: 20 , color: .white)
     
     private lazy var messageView: CustomInputAccessoryView = {
         let tv = CustomInputAccessoryView()

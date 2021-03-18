@@ -37,7 +37,7 @@ class FeedCell: UICollectionViewCell {
     }()
     
     let locationLabel: CustomLabel = {
-        let label = CustomLabel(title: "Location", name: Font.AvenirNext , fontSize: 14, color: #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1))
+        let label = CustomLabel( name: Font.AvenirNext , fontSize: 14, color: #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1))
         label.textAlignment = .left
         return label
     }()

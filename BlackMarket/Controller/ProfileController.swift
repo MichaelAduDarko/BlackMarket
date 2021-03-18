@@ -6,12 +6,18 @@
 //
 
 import UIKit
+import Firebase
 
 protocol ProfileControllerDelegate: class {
     func handleLogout()
 }
 
 class ProfileController: UITableViewController {
+    
+    private var user: User? {
+        didSet { headerView.user = user }
+    }
+    
     
     weak var delegate: ProfileControllerDelegate?
     //MARK:- Properties
@@ -25,12 +31,23 @@ class ProfileController: UITableViewController {
     override func  viewDidLoad() {
         super.viewDidLoad()
         configureUI()
+        fetchUser()
 
     }
-    
+        
     
     
     //MARK:- API
+    
+    func fetchUser(){
+        guard let uid = Auth.auth().currentUser?.uid else { return }
+        UserService.fetchUser { user in
+
+            self.user = user
+            print("DEBUG: Username is \(user.profileImageUrl )")
+            print("DEBUG: Username is \(user.fullname )")
+        }
+    }
     
     
     
@@ -73,9 +90,6 @@ extension ProfileController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//            let accountInfoVC = AccountInfoController()
-//            navigationController?.pushViewController(accountInfoVC, animated: true)
-//            tableView.deselectRow(at: indexPath, animated: true)
         
         guard let viewModel = ProfileViewModel(rawValue: indexPath.row) else { return }
         

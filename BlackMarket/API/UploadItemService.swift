@@ -11,7 +11,6 @@ import Firebase
 
 class UploadItemService {
     
-    
     static let shared = UploadItemService()
     
     func uploadItem(title: String, price: String, description: String, completion: @escaping(Error?) -> Void){
@@ -22,7 +21,7 @@ class UploadItemService {
                       "price": price,
                       "description": description ] as [String : Any]
         
-        REF_POSTITEM.addDocum  ent(data: values, completion: completion)
+        REF_POSTITEM.addDocument(data: values, completion: completion)
         
     }
     
