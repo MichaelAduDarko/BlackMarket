@@ -7,10 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		200EF97151DD04EC5F021DB7 /* Pods_BlackMarket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 590DEFF60F30C68E7AA7C1DE /* Pods_BlackMarket.framework */; };
+		0BFFD8C377510DE7EAD357B9 /* Pods_BlackMarket_BlackMarketUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63DE919A531EDB41F50F2207 /* Pods_BlackMarket_BlackMarketUITests.framework */; };
 		47060D1525E5CE4000692096 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47060D1425E5CE4000692096 /* AuthService.swift */; };
 		470E117725E49FD4000F4440 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 470E117625E49FD4000F4440 /* GoogleService-Info.plist */; };
 		471BB5EF25D4C6E4005F4F13 /* AccountInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 471BB5EE25D4C6E4005F4F13 /* AccountInfoController.swift */; };
+		47347EB42602E603000A482E /* UploadItemService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47347EB32602E603000A482E /* UploadItemService.swift */; };
+		47347F082602EB59000A482E /* API_Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47347F072602EB59000A482E /* API_Constant.swift */; };
 		475460DE25FAF9390067B97E /* ImageContainerViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 475460DD25FAF9390067B97E /* ImageContainerViewCell.swift */; };
 		475460F225FB03DC0067B97E /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 475460F125FB03DC0067B97E /* ImagePicker.swift */; };
 		4791869A25F7293600BD2CBF /* StackScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4791869925F7293600BD2CBF /* StackScrollView.swift */; };
@@ -57,8 +59,8 @@
 		47B916AD25D4DE2D00DD7634 /* DetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B916AC25D4DE2D00DD7634 /* DetailController.swift */; };
 		47CF510725E5DDBF0074712A /* ListingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CF510625E5DDBF0074712A /* ListingsController.swift */; };
 		47CFAF7225DF6160001DB8E6 /* DescriptionTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CFAF7125DF6160001DB8E6 /* DescriptionTextView.swift */; };
-		5D4326446657A4B0264CBF9B /* Pods_BlackMarket_BlackMarketUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23B44F406E6F422B8A1C47CE /* Pods_BlackMarket_BlackMarketUITests.framework */; };
-		748B4220B973D31232D4EFE4 /* Pods_BlackMarketTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30EDD078B0195298C96CACDB /* Pods_BlackMarketTests.framework */; };
+		A59C5D089DA577F22499FCA6 /* Pods_BlackMarket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C4517A5B078A7837B14848A /* Pods_BlackMarket.framework */; };
+		BF30F3BC51A7215B7AA3E267 /* Pods_BlackMarketTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A7B65A4928FD8692180A3B9 /* Pods_BlackMarketTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,13 +81,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		13EB5F269F9601DE351DD927 /* Pods-BlackMarket-BlackMarketUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlackMarket-BlackMarketUITests.release.xcconfig"; path = "Target Support Files/Pods-BlackMarket-BlackMarketUITests/Pods-BlackMarket-BlackMarketUITests.release.xcconfig"; sourceTree = "<group>"; };
-		23B44F406E6F422B8A1C47CE /* Pods_BlackMarket_BlackMarketUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BlackMarket_BlackMarketUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		30EDD078B0195298C96CACDB /* Pods_BlackMarketTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BlackMarketTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		32E9BDE7E40378988E97347C /* Pods-BlackMarket.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlackMarket.debug.xcconfig"; path = "Target Support Files/Pods-BlackMarket/Pods-BlackMarket.debug.xcconfig"; sourceTree = "<group>"; };
+		225B7D83ECE5CFAB92123E7E /* Pods-BlackMarketTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlackMarketTests.release.xcconfig"; path = "Target Support Files/Pods-BlackMarketTests/Pods-BlackMarketTests.release.xcconfig"; sourceTree = "<group>"; };
+		3C4517A5B078A7837B14848A /* Pods_BlackMarket.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BlackMarket.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		47060D1425E5CE4000692096 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		470E117625E49FD4000F4440 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		471BB5EE25D4C6E4005F4F13 /* AccountInfoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountInfoController.swift; sourceTree = "<group>"; };
+		47347EB32602E603000A482E /* UploadItemService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadItemService.swift; sourceTree = "<group>"; };
+		47347F072602EB59000A482E /* API_Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API_Constant.swift; sourceTree = "<group>"; };
 		475460DD25FAF9390067B97E /* ImageContainerViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageContainerViewCell.swift; sourceTree = "<group>"; };
 		475460F125FB03DC0067B97E /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		4791869925F7293600BD2CBF /* StackScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackScrollView.swift; sourceTree = "<group>"; };
@@ -139,11 +141,13 @@
 		47B916AC25D4DE2D00DD7634 /* DetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailController.swift; sourceTree = "<group>"; };
 		47CF510625E5DDBF0074712A /* ListingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingsController.swift; sourceTree = "<group>"; };
 		47CFAF7125DF6160001DB8E6 /* DescriptionTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionTextView.swift; sourceTree = "<group>"; };
-		590DEFF60F30C68E7AA7C1DE /* Pods_BlackMarket.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BlackMarket.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		76A892EB989FB62499C3598B /* Pods-BlackMarketTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlackMarketTests.debug.xcconfig"; path = "Target Support Files/Pods-BlackMarketTests/Pods-BlackMarketTests.debug.xcconfig"; sourceTree = "<group>"; };
-		9E09DE865E70EAA466B1DDF9 /* Pods-BlackMarket.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlackMarket.release.xcconfig"; path = "Target Support Files/Pods-BlackMarket/Pods-BlackMarket.release.xcconfig"; sourceTree = "<group>"; };
-		A420BD02BD11D690471F3048 /* Pods-BlackMarketTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlackMarketTests.release.xcconfig"; path = "Target Support Files/Pods-BlackMarketTests/Pods-BlackMarketTests.release.xcconfig"; sourceTree = "<group>"; };
-		CF5BE403B24FDB0EFF894178 /* Pods-BlackMarket-BlackMarketUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlackMarket-BlackMarketUITests.debug.xcconfig"; path = "Target Support Files/Pods-BlackMarket-BlackMarketUITests/Pods-BlackMarket-BlackMarketUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		58F9C2A77D59B8F0D68C821B /* Pods-BlackMarket-BlackMarketUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlackMarket-BlackMarketUITests.release.xcconfig"; path = "Target Support Files/Pods-BlackMarket-BlackMarketUITests/Pods-BlackMarket-BlackMarketUITests.release.xcconfig"; sourceTree = "<group>"; };
+		63DE919A531EDB41F50F2207 /* Pods_BlackMarket_BlackMarketUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BlackMarket_BlackMarketUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7A7B65A4928FD8692180A3B9 /* Pods_BlackMarketTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BlackMarketTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9258743042598E0B7170183E /* Pods-BlackMarket.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlackMarket.debug.xcconfig"; path = "Target Support Files/Pods-BlackMarket/Pods-BlackMarket.debug.xcconfig"; sourceTree = "<group>"; };
+		9DBF5940C419CEB3E2280421 /* Pods-BlackMarket-BlackMarketUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlackMarket-BlackMarketUITests.debug.xcconfig"; path = "Target Support Files/Pods-BlackMarket-BlackMarketUITests/Pods-BlackMarket-BlackMarketUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		9E3C996561A5E14BE7A9E73B /* Pods-BlackMarket.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlackMarket.release.xcconfig"; path = "Target Support Files/Pods-BlackMarket/Pods-BlackMarket.release.xcconfig"; sourceTree = "<group>"; };
+		D39E2271CF0C20D63FAF3F62 /* Pods-BlackMarketTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlackMarketTests.debug.xcconfig"; path = "Target Support Files/Pods-BlackMarketTests/Pods-BlackMarketTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,7 +155,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				200EF97151DD04EC5F021DB7 /* Pods_BlackMarket.framework in Frameworks */,
+				A59C5D089DA577F22499FCA6 /* Pods_BlackMarket.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -159,7 +163,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				748B4220B973D31232D4EFE4 /* Pods_BlackMarketTests.framework in Frameworks */,
+				BF30F3BC51A7215B7AA3E267 /* Pods_BlackMarketTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -167,7 +171,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5D4326446657A4B0264CBF9B /* Pods_BlackMarket_BlackMarketUITests.framework in Frameworks */,
+				0BFFD8C377510DE7EAD357B9 /* Pods_BlackMarket_BlackMarketUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -178,9 +182,9 @@
 			isa = PBXGroup;
 			children = (
 				4797A74925F04FB7004E50A9 /* libTTGTagCollectionView.a */,
-				590DEFF60F30C68E7AA7C1DE /* Pods_BlackMarket.framework */,
-				23B44F406E6F422B8A1C47CE /* Pods_BlackMarket_BlackMarketUITests.framework */,
-				30EDD078B0195298C96CACDB /* Pods_BlackMarketTests.framework */,
+				3C4517A5B078A7837B14848A /* Pods_BlackMarket.framework */,
+				63DE919A531EDB41F50F2207 /* Pods_BlackMarket_BlackMarketUITests.framework */,
+				7A7B65A4928FD8692180A3B9 /* Pods_BlackMarketTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -188,12 +192,12 @@
 		2D7E80A6B2F714E86341D4D4 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				32E9BDE7E40378988E97347C /* Pods-BlackMarket.debug.xcconfig */,
-				9E09DE865E70EAA466B1DDF9 /* Pods-BlackMarket.release.xcconfig */,
-				CF5BE403B24FDB0EFF894178 /* Pods-BlackMarket-BlackMarketUITests.debug.xcconfig */,
-				13EB5F269F9601DE351DD927 /* Pods-BlackMarket-BlackMarketUITests.release.xcconfig */,
-				76A892EB989FB62499C3598B /* Pods-BlackMarketTests.debug.xcconfig */,
-				A420BD02BD11D690471F3048 /* Pods-BlackMarketTests.release.xcconfig */,
+				9258743042598E0B7170183E /* Pods-BlackMarket.debug.xcconfig */,
+				9E3C996561A5E14BE7A9E73B /* Pods-BlackMarket.release.xcconfig */,
+				9DBF5940C419CEB3E2280421 /* Pods-BlackMarket-BlackMarketUITests.debug.xcconfig */,
+				58F9C2A77D59B8F0D68C821B /* Pods-BlackMarket-BlackMarketUITests.release.xcconfig */,
+				D39E2271CF0C20D63FAF3F62 /* Pods-BlackMarketTests.debug.xcconfig */,
+				225B7D83ECE5CFAB92123E7E /* Pods-BlackMarketTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -202,6 +206,8 @@
 			isa = PBXGroup;
 			children = (
 				47060D1425E5CE4000692096 /* AuthService.swift */,
+				47347EB32602E603000A482E /* UploadItemService.swift */,
+				47347F072602EB59000A482E /* API_Constant.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -372,11 +378,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4794FA4525C8EAAE005C2284 /* Build configuration list for PBXNativeTarget "BlackMarket" */;
 			buildPhases = (
-				E0DEC96D12D29AB51931FADC /* [CP] Check Pods Manifest.lock */,
+				8ED837278EEBEE5B90526F95 /* [CP] Check Pods Manifest.lock */,
 				4794FA1725C8EAAB005C2284 /* Sources */,
 				4794FA1825C8EAAB005C2284 /* Frameworks */,
 				4794FA1925C8EAAB005C2284 /* Resources */,
-				F465BF1EA3F7472FAECA07E6 /* [CP] Embed Pods Frameworks */,
+				EAD55E3F5488850A6FF3EBF1 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -391,7 +397,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4794FA4825C8EAAE005C2284 /* Build configuration list for PBXNativeTarget "BlackMarketTests" */;
 			buildPhases = (
-				BF740BA3EBC23ADB012EFC12 /* [CP] Check Pods Manifest.lock */,
+				6672775715DFB325D6DB253F /* [CP] Check Pods Manifest.lock */,
 				4794FA2D25C8EAAE005C2284 /* Sources */,
 				4794FA2E25C8EAAE005C2284 /* Frameworks */,
 				4794FA2F25C8EAAE005C2284 /* Resources */,
@@ -410,11 +416,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4794FA4B25C8EAAE005C2284 /* Build configuration list for PBXNativeTarget "BlackMarketUITests" */;
 			buildPhases = (
-				501EB3520BCC12ABFA47609A /* [CP] Check Pods Manifest.lock */,
+				6D98FA5FFDDEE4EBBB0A865E /* [CP] Check Pods Manifest.lock */,
 				4794FA3825C8EAAE005C2284 /* Sources */,
 				4794FA3925C8EAAE005C2284 /* Frameworks */,
 				4794FA3A25C8EAAE005C2284 /* Resources */,
-				F1F68DCB8622FE094E7D407F /* [CP] Embed Pods Frameworks */,
+				6C6762AD278F5B73755E39EC /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -498,29 +504,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		501EB3520BCC12ABFA47609A /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-BlackMarket-BlackMarketUITests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		BF740BA3EBC23ADB012EFC12 /* [CP] Check Pods Manifest.lock */ = {
+		6672775715DFB325D6DB253F /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -542,7 +526,46 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		E0DEC96D12D29AB51931FADC /* [CP] Check Pods Manifest.lock */ = {
+		6C6762AD278F5B73755E39EC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BlackMarket-BlackMarketUITests/Pods-BlackMarket-BlackMarketUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BlackMarket-BlackMarketUITests/Pods-BlackMarket-BlackMarketUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BlackMarket-BlackMarketUITests/Pods-BlackMarket-BlackMarketUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6D98FA5FFDDEE4EBBB0A865E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BlackMarket-BlackMarketUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8ED837278EEBEE5B90526F95 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -564,24 +587,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		F1F68DCB8622FE094E7D407F /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-BlackMarket-BlackMarketUITests/Pods-BlackMarket-BlackMarketUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-BlackMarket-BlackMarketUITests/Pods-BlackMarket-BlackMarketUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BlackMarket-BlackMarketUITests/Pods-BlackMarket-BlackMarketUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		F465BF1EA3F7472FAECA07E6 /* [CP] Embed Pods Frameworks */ = {
+		EAD55E3F5488850A6FF3EBF1 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -622,8 +628,10 @@
 				47CF510725E5DDBF0074712A /* ListingsController.swift in Sources */,
 				4794FA1F25C8EAAB005C2284 /* AppDelegate.swift in Sources */,
 				4794FABB25C8EF86005C2284 /* MessageContoller.swift in Sources */,
+				47347EB42602E603000A482E /* UploadItemService.swift in Sources */,
 				479B63B825DB4CAE00ED0E6A /* PostCustomButton.swift in Sources */,
 				4794FAC025C8EFB7005C2284 /* AuthenticationViewModel.swift in Sources */,
+				47347F082602EB59000A482E /* API_Constant.swift in Sources */,
 				4794FAB125C8EF26005C2284 /* FeedController.swift in Sources */,
 				471BB5EF25D4C6E4005F4F13 /* AccountInfoController.swift in Sources */,
 				4794FA2125C8EAAB005C2284 /* SceneDelegate.swift in Sources */,
@@ -825,7 +833,7 @@
 		};
 		4794FA4625C8EAAE005C2284 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 32E9BDE7E40378988E97347C /* Pods-BlackMarket.debug.xcconfig */;
+			baseConfigurationReference = 9258743042598E0B7170183E /* Pods-BlackMarket.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -845,7 +853,7 @@
 		};
 		4794FA4725C8EAAE005C2284 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9E09DE865E70EAA466B1DDF9 /* Pods-BlackMarket.release.xcconfig */;
+			baseConfigurationReference = 9E3C996561A5E14BE7A9E73B /* Pods-BlackMarket.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -866,7 +874,7 @@
 		};
 		4794FA4925C8EAAE005C2284 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 76A892EB989FB62499C3598B /* Pods-BlackMarketTests.debug.xcconfig */;
+			baseConfigurationReference = D39E2271CF0C20D63FAF3F62 /* Pods-BlackMarketTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -888,7 +896,7 @@
 		};
 		4794FA4A25C8EAAE005C2284 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A420BD02BD11D690471F3048 /* Pods-BlackMarketTests.release.xcconfig */;
+			baseConfigurationReference = 225B7D83ECE5CFAB92123E7E /* Pods-BlackMarketTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -910,7 +918,7 @@
 		};
 		4794FA4C25C8EAAE005C2284 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CF5BE403B24FDB0EFF894178 /* Pods-BlackMarket-BlackMarketUITests.debug.xcconfig */;
+			baseConfigurationReference = 9DBF5940C419CEB3E2280421 /* Pods-BlackMarket-BlackMarketUITests.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 77M4HH73F6;
@@ -930,7 +938,7 @@
 		};
 		4794FA4D25C8EAAE005C2284 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 13EB5F269F9601DE351DD927 /* Pods-BlackMarket-BlackMarketUITests.release.xcconfig */;
+			baseConfigurationReference = 58F9C2A77D59B8F0D68C821B /* Pods-BlackMarket-BlackMarketUITests.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 77M4HH73F6;

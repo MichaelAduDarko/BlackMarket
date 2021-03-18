@@ -23,6 +23,7 @@ class ListItemTextField: UITextField {
         borderStyle = .none
         layer.borderColor = #colorLiteral(red: 0.2213829578, green: 0.6727860964, blue: 0.9729384217, alpha: 1)
         textColor = .white
+        autocorrectionType = .no
         
         backgroundColor = UIColor(white: 1, alpha: 0.2)
         attributedPlaceholder = NSAttributedString(string: placeHolder, attributes: [.foregroundColor: UIColor(white: 1, alpha: 1.9)])

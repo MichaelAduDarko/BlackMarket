@@ -8,6 +8,7 @@
 
 import UIKit
 import TTGTagCollectionView
+import SCLAlertView
 
 class PostController: UIViewController, UITextFieldDelegate {
      
@@ -87,6 +88,24 @@ class PostController: UIViewController, UITextFieldDelegate {
          navigationController?.dismiss(animated: true, completion: nil)
     }
 
+    @objc func handleDoneButton(){
+        guard let title = listItemTitle.text else { return }
+        guard let itemPrice = price.text else { return }
+        guard let description = descriptionTV.text else { return }
+        
+        showLoader(true, withText: "Loading...")
+        
+        UploadItemService.shared.uploadItem(title: title, price: itemPrice, description: description) { error in
+            
+            if let  error = error {
+                self.showLoader(false)
+                SCLAlertView().showError(error.localizedDescription)
+                return
+            }
+            self.showLoader(false)
+            self.dismiss(animated: true, completion: nil)
+        }
+    }
     
     @objc func tapDone(sender: Any) {
             self.view.endEditing(true)
@@ -113,7 +132,7 @@ class PostController: UIViewController, UITextFieldDelegate {
         view.backgroundColor = .backgroundColor
        
         navigationItem.leftBarButtonItem = leftBarButtonItem(selector: #selector(handleCancelButton))
-        navigationItem.rightBarButtonItem = rightBarButtonItem(selector: #selector(handleCancelButton))
+        navigationItem.rightBarButtonItem = rightBarButtonItem(selector: #selector(handleDoneButton))
         
         stackScrollView.backgroundColor = .backgroundColor
         view.addSubview(stackScrollView)
