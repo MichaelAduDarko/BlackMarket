@@ -16,9 +16,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let scene = (scene as? UIWindowScene) else { return }
         
-        window = UIWindow(windowScene: scene)
-        window?.rootViewController = MainTabController()
-        window?.makeKeyAndVisible()
+        configure(with: scene)
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
@@ -50,5 +48,30 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
 
 
+}
+
+extension SceneDelegate {
+    private func configure(with windowScene: UIWindowScene) {
+        window = UIWindow(windowScene: windowScene)
+        window?.rootViewController = SceneDelegate.rootViewController()
+        window?.makeKeyAndVisible()
+    }
+
+    private static func rootViewController() -> UIViewController {
+        guard Auth.auth().currentUser?.uid == nil else { return MainTabController() }
+
+        let controller = LoginController()
+        let navigationController = UINavigationController(rootViewController: controller)
+        return navigationController
+    }
+}
+
+extension SceneDelegate {
+    static func routeToRootViewController() {
+        let sceneDelegate = UIApplication.shared.connectedScenes.first!.delegate as! SceneDelegate
+        let rootViewController = SceneDelegate.rootViewController()
+        sceneDelegate.window?.rootViewController = rootViewController
+        sceneDelegate.window?.makeKeyAndVisible()
+    }
 }
 

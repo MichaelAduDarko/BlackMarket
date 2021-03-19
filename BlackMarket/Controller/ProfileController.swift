@@ -40,11 +40,10 @@ class ProfileController: UITableViewController {
     //MARK:- API
     
     func fetchUser(){
-        guard let uid = Auth.auth().currentUser?.uid else { return }
         UserService.fetchUser { user in
 
             self.user = user
-            print("DEBUG: Username is \(user.profileImageUrl )")
+            print("DEBUG: Username is \(user.profileImageUrl)")
             print("DEBUG: Username is \(user.fullname )")
         }
     }

@@ -16,9 +16,21 @@ struct User {
     
     init(dictionary: [String:Any]) {
         
-        self.email = dictionary["email"] as? String ?? ""
-        self.fullname = dictionary["fullname"] as? String ?? ""
-        self.profileImageUrl = dictionary["profileImageUrl"] as? String ?? ""
-        self.uid = dictionary["uid"] as? String ?? ""
+        self.email = dictionary[Keys.email] as? String ?? ""
+        self.fullname = dictionary[Keys.fullName] as? String ?? ""
+        self.profileImageUrl = dictionary[Keys.profileImageURL] as? String ?? ""
+        self.uid = dictionary[Keys.identifier] as? String ?? ""
+        
+        print(dictionary)
+        
+    }
+}
+
+extension User {
+    enum Keys {
+        static let email = "email"
+        static let fullName = "fullName"
+        static let profileImageURL = "profileIamgeUrl"
+        static let identifier = "uid"
     }
 }
