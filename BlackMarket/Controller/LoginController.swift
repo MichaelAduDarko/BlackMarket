@@ -69,18 +69,18 @@ class LoginController: UIViewController, UITextFieldDelegate {
                 return
                 
             } else {
-                let timer = SCLAlertView.SCLTimeoutConfiguration.init(timeoutValue: 1, timeoutAction: {})
-                
-                
-                if result != nil {
-                    self.showLoader(false)
-                    SCLAlertView().showSuccess("Success", subTitle: "You have succefully logged In", closeButtonTitle: nil , timeout: timer )
-        
-                }
-                
-                self.dismiss(animated: true, completion: nil)
-                return
+//                let timer = SCLAlertView.SCLTimeoutConfiguration.init(timeoutValue: 1, timeoutAction: {})
+//
+//
+//                if result != nil {
+//                    self.showLoader(false)
+//                    SCLAlertView().showSuccess("Success", subTitle: "You have succefully logged In", closeButtonTitle: nil , timeout: timer )
+//
+//                }
 
+                DispatchQueue.main.async {
+                    SceneDelegate.routeToRootViewController()
+                }
             }
             
         }

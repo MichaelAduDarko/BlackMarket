@@ -21,40 +21,18 @@ class MainTabController: UITabBarController, UINavigationControllerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
-        authenticateUser()
     }
     
     
     //MARK:- API
-    func authenticateUser(){
-        if Auth.auth().currentUser?.uid == nil {
-            presentLoginScreen()
-            print("DEBUG: Preseny current screen ")
-        } else {
-            
-            print("DEBUG: User is id is\(Auth.auth().currentUser?.uid) ")
-        }
-       
-    }
-    
     func logout(){
         do{
             try Auth.auth().signOut()
-            presentLoginScreen()
+            
+            DispatchQueue.main.async { SceneDelegate.routeToRootViewController() }
+
         }  catch {
             print("DEBUG: error sigining out ")
-        }
-    }
-    
-    func presentLoginScreen(){
-        DispatchQueue.main.async {
-            
-            let controller = LoginController()
-            let nav = UINavigationController(rootViewController: controller)
-            nav.modalPresentationStyle = .fullScreen
-            self.present(nav, animated: true, completion: nil)
-            
-            
         }
     }
     
