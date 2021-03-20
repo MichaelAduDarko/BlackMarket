@@ -6,11 +6,17 @@
 //
 
 import UIKit
+import Firebase
 
 class DetailController: UIViewController{
     
     
     //MARK:- Propeties
+    var posts : Items? {
+        didSet { populateUserData()}
+    }
+    
+//    private var posts = [Items]()
     
     let stackScrollView = StackScrollView()
     
@@ -29,13 +35,26 @@ class DetailController: UIViewController{
     
     private let itemtitle = CustomLabel( name: Font.Futura, fontSize: 30 , color: .white)
     
-    private let priceTitle = CustomLabel( name: Font.Futura, fontSize: 25 , color: .systemPink)
+    private let priceTitle : CustomLabel = {
+        let label =  CustomLabel( name: Font.Futura, fontSize: 25 , color: .systemPink)
+        label.text = "Price"
+        return label
+    }()
     
     private let priceTag = CustomLabel( name: Font.AvenirNext, fontSize: 20 , color: .white)
     
-    private let userLocation = CustomLabel( name: Font.AvenirNext, fontSize: 15 , color: .gray)
+    private let userLocation : CustomLabel = {
+        let label = CustomLabel( name: Font.AvenirNext, fontSize: 15 , color: .gray)
+        label.text = "Newark"
+       return label
+    }()
     
-    private let descriptionTitle = CustomLabel( name: Font.Futura, fontSize: 25 , color: .systemPink)
+
+    private let descriptionTitle : CustomLabel = {
+        let label =  CustomLabel( name: Font.Futura, fontSize: 25 , color: .systemPink)
+        label.text = "Description"
+        return label
+    }()
     
     private let itemDescription = CustomLabel( name: Font.AvenirNext, fontSize: 20 , color: .white)
     
@@ -49,9 +68,18 @@ class DetailController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         configure()
+        populateUserData()
 
     }
     
+    //MARK:- API
+    func populateUserData(){
+        guard let post = posts else { return }
+        itemtitle.text = post.title
+        priceTag.text = post.price
+        itemDescription.text = post.description
+        
+    }
     
     //MARK:- Selectors
     @objc func handleCancelButton (){

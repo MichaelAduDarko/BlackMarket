@@ -41,11 +41,10 @@ class ProfileController: UITableViewController {
     
     func fetchUser(){
         UserService.fetchUser { user in
-
             self.user = user
-            print("DEBUG: Username is \(user.profileImageUrl)")
-            print("DEBUG: Username is \(user.fullname )")
+            self.tableView.reloadData()
         }
+       
     }
     
     

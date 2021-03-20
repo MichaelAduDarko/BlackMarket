@@ -95,7 +95,7 @@ class PostController: UIViewController, UITextFieldDelegate {
         
         showLoader(true, withText: "Loading...")
         
-        UploadItemService.shared.uploadItem(title: title, price: itemPrice, description: description) { error in
+        UploadItemService.uploadItem(title: title, price: itemPrice, description: description) { error in
             
             if let  error = error {
                 self.showLoader(false)

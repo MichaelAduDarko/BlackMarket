@@ -29,7 +29,7 @@ struct User {
 extension User {
     enum Keys {
         static let email = "email"
-        static let fullName = "fullName"
+        static let fullName = "fullname"
         static let profileImageURL = "profileIamgeUrl"
         static let identifier = "uid"
     }

@@ -9,11 +9,11 @@ import UIKit
 import Firebase
 
 
-class UploadItemService {
+struct UploadItemService {
     
     static let shared = UploadItemService()
     
-    func uploadItem(title: String, price: String, description: String, completion: @escaping(Error?) -> Void){
+    static func uploadItem(title: String, price: String, description: String, completion: @escaping(Error?) -> Void){
         guard let uid = Auth.auth().currentUser?.uid else { return }
         
         let values = ["uid":uid,
@@ -22,6 +22,19 @@ class UploadItemService {
                       "description": description ] as [String : Any]
         
         REF_POSTITEM.addDocument(data: values, completion: completion)
+        
+    }
+    
+    static func fetchPost(completion: @escaping([Items]) -> Void){
+        REF_POSTITEM.getDocuments { (snapshot, error) in
+            
+            guard let documents = snapshot?.documents else { return }
+            
+            let posts = documents.map({Items(postItemID: $0.documentID, dictionary: $0.data())})
+            completion(posts)
+            
+            
+        }
         
     }
     

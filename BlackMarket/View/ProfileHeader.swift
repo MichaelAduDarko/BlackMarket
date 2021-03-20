@@ -73,7 +73,7 @@ class ProfileHeader: UIView {
         stack.anchor(top: profileImageView.bottomAnchor, paddingTop: 16)
     }
     
-    //MARK:- Helpers
+    //MARK:- API
     
     func populateUserData(){
         guard let user  = user else { return }
@@ -81,10 +81,10 @@ class ProfileHeader: UIView {
         
         guard let url = URL(string: user.profileImageUrl) else { return }
         profileImageView.sd_setImage(with: url)
-        
-       
-        
+
     }
+    
+    //MARK:- Helpers
     
     func configureGradientLayer(){
         let gradient = CAGradientLayer()

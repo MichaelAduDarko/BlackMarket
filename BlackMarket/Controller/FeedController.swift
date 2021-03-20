@@ -6,10 +6,13 @@
 //
 
 import UIKit
+import Firebase
 
 class FeedController: UIViewController {
 
-    lazy var _data: [feedData] = dummyData._data
+//    lazy var _data: [feedData] = dummyData._data
+    
+    private var posts = [Items]()
 
     //MARK:- Propeties
     fileprivate let collectionView: UICollectionView = {
@@ -28,8 +31,20 @@ class FeedController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
+        populateUserData()
     }
 
+    //MARK:- API
+    
+    func populateUserData(){
+        UploadItemService.fetchPost { posts in
+            self.posts = posts
+            self.collectionView.reloadData()
+            
+            print("DEBUG: JKKLL\(posts)")
+        }
+        
+    }
 
     //MARK:- Helper
     func configureUI(){
@@ -63,7 +78,7 @@ extension FeedController: UICollectionViewDelegateFlowLayout, UICollectionViewDa
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return _data.count
+        return posts.count
     }
 
 
@@ -73,7 +88,6 @@ extension FeedController: UICollectionViewDelegateFlowLayout, UICollectionViewDa
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! FeedCell
-        cell.data = _data[indexPath.item]
         return cell
     }
     
