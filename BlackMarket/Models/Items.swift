@@ -13,6 +13,7 @@ struct Item {
     let title: String
     let price: String
     let description: String
+    let imageUrl: String
     
     init(postItemID: String, dictionary: [String: Any]) {
         
@@ -21,6 +22,7 @@ struct Item {
         self.title = dictionary ["title"] as? String ?? ""
         self.price = dictionary ["price"] as? String ?? ""
         self.description = dictionary ["description"] as? String ?? ""
+        self.imageUrl = dictionary["imageUrl"] as? String ?? ""
         
         
     }

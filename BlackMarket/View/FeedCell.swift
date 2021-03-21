@@ -91,8 +91,10 @@ class FeedCell: UICollectionViewCell {
 
     func update(with item: Item) {
         feedLabel.text =  "\(item.title) \(item.price)"
-        // Figure this oout
-//        feedImageView.sd_setImage(with: item.)
+
+        if let url = URL(string: item.imageUrl) {
+            feedImageView.sd_setImage(with: url)
+        }
     }
     
     
