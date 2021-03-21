@@ -28,6 +28,7 @@ class DetailController: UIViewController{
     
     private let imageBg: UIImageView = {
         let view = UIImageView()
+        view.contentMode = .scaleAspectFill
         view.image = #imageLiteral(resourceName: "IMG_0330")
         view.heightAnchor.constraint(equalToConstant: 300).isActive = true
         return view
@@ -78,7 +79,7 @@ class DetailController: UIViewController{
         itemtitle.text = post.title
         priceTag.text = post.price
         itemDescription.text = post.description
-        
+        imageBg.sd_setImage(with: URL(string: post.imageUrl))
     }
     
     //MARK:- Selectors

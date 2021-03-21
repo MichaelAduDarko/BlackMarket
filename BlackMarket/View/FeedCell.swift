@@ -20,6 +20,7 @@ class FeedCell: UICollectionViewCell {
     
     let feedImageView : UIImageView = {
         let iv = UIImageView()
+        iv.contentMode = .scaleAspectFill
         iv.translatesAutoresizingMaskIntoConstraints = false
         return iv
         
@@ -91,10 +92,7 @@ class FeedCell: UICollectionViewCell {
 
     func update(with item: Item) {
         feedLabel.text =  "\(item.title) \(item.price)"
-
-        if let url = URL(string: item.imageUrl) {
-            feedImageView.sd_setImage(with: url)
-        }
+        feedImageView.sd_setImage(with: URL(string: item.imageUrl))
     }
     
     

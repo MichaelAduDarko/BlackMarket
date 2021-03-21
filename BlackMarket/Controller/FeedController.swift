@@ -95,9 +95,10 @@ extension FeedController: UICollectionViewDelegateFlowLayout, UICollectionViewDa
     
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
+        let item = posts[indexPath.row]
         let categoryDetail = DetailController()
         categoryDetail.modalPresentationStyle = .fullScreen
+        categoryDetail.posts = item
         present(categoryDetail, animated: true, completion: nil)
     }
     
