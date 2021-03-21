@@ -18,7 +18,8 @@ class PostController: UIViewController, UITextFieldDelegate {
 //    var selectedImage: UIImage? {
 //        didSet { imageContainerViewController.image = selectedImage}
 //    }
-    
+    private var selectedImage: UIImage?
+
     let stackScrollView = StackScrollView()
     
     private var imagePicker: ImagePicker?
@@ -94,7 +95,7 @@ class PostController: UIViewController, UITextFieldDelegate {
     }
 
     @objc func handleDoneButton(){
-        guard let image = imageContainerViewController else {return}
+        guard let image = selectedImage else { return }
         guard let title = listItemTitle.text else { return }
         guard let itemPrice = price.text else { return }
         guard let description = descriptionTV.text else { return }
@@ -216,6 +217,7 @@ extension PostController: ImageContainerDelegate {
 extension PostController: ImagePickerDelegate {
     func didSelect(image: UIImage?) {
         guard let _image = image else { return }
+        selectedImage = _image
         
         self.imageContainerViewController.update(with: [_image])
     }
