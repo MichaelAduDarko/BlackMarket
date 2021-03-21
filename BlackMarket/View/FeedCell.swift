@@ -20,7 +20,6 @@ class FeedCell: UICollectionViewCell {
     
     let feedImageView : UIImageView = {
         let iv = UIImageView()
-        iv.contentMode = .scaleAspectFill
         iv.translatesAutoresizingMaskIntoConstraints = false
         return iv
         
@@ -64,20 +63,26 @@ class FeedCell: UICollectionViewCell {
     }
     
     func setUp(){
-        let imageHeight: CGFloat = contentView.bounds.size.height
-        let imageWidth: CGFloat = contentView.bounds.size.width
-        
         let stackView = UIStackView(arrangedSubviews: [feedLabel,locationLabel])
+        stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical
         stackView.distribution = .fillEqually
-        
-        
-        
-        contentView.addSubview(stackView)
-        stackView.anchor(left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, height: 45)
-        
+
+        let height = contentView.bounds.size.height * 0.85
         contentView.addSubview(feedImageView)
-        feedImageView.anchor(top:topAnchor, bottom: stackView.topAnchor, paddingBottom: 5,width: imageWidth, height: imageHeight)
+        NSLayoutConstraint.activate([
+            feedImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            feedImageView.topAnchor.constraint(equalTo: contentView.topAnchor),
+            feedImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+            feedImageView.heightAnchor.constraint(equalToConstant: height)
+        ])
+
+        contentView.addSubview(stackView)
+        NSLayoutConstraint.activate([
+            stackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            stackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+            stackView.topAnchor.constraint(equalTo: feedImageView.bottomAnchor)
+        ])
     }
     
     
@@ -91,7 +96,8 @@ class FeedCell: UICollectionViewCell {
     }
 
     func update(with item: Item) {
-        feedLabel.text =  "\(item.title) \(item.price)"
+        feedLabel.text = "\(item.title) \(item.price)"
+        locationLabel.text = item.uid
         feedImageView.sd_setImage(with: URL(string: item.imageUrl))
     }
     
