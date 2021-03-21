@@ -12,7 +12,7 @@ class DetailController: UIViewController{
     
     
     //MARK:- Propeties
-    var posts : Items? {
+    var posts : Item? {
         didSet { populateUserData()}
     }
     

@@ -7,7 +7,7 @@
 
 import Firebase
 
-struct Items {
+struct Item {
     let uid: String
     let postItemID: String
     let title: String

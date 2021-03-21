@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 struct feedData {
     let image: UIImage
@@ -86,6 +87,12 @@ class FeedCell: UICollectionViewCell {
             feedLabel.text = data.productName
             locationLabel.text = data.locationName
         }
+    }
+
+    func update(with item: Item) {
+        feedLabel.text =  "\(item.title) \(item.price)"
+        // Figure this oout
+//        feedImageView.sd_setImage(with: item.)
     }
     
     

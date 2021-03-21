@@ -28,12 +28,12 @@ struct UploadItemService {
         }
     }
     
-    static func fetchPost(completion: @escaping([Items]) -> Void){
+    static func fetchPost(completion: @escaping([Item]) -> Void){
         REF_POSTITEM.getDocuments { (snapshot, error) in
             
             guard let documents = snapshot?.documents else { return }
             
-            let posts = documents.map({Items(postItemID: $0.documentID, dictionary: $0.data())})
+            let posts = documents.map({Item(postItemID: $0.documentID, dictionary: $0.data())})
             completion(posts)
             
             

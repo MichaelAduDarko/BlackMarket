@@ -12,7 +12,7 @@ class FeedController: UIViewController {
 
 //    lazy var _data: [feedData] = dummyData._data
     
-    private var posts = [Items]()
+    private var posts = [Item]()
 
     //MARK:- Propeties
     fileprivate let collectionView: UICollectionView = {
@@ -88,6 +88,8 @@ extension FeedController: UICollectionViewDelegateFlowLayout, UICollectionViewDa
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! FeedCell
+        let item = posts[indexPath.row]
+        cell.update(with: item)
         return cell
     }
     
