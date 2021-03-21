@@ -13,16 +13,19 @@ struct UploadItemService {
     
     static let shared = UploadItemService()
     
-    static func uploadItem(title: String, price: String, description: String, completion: @escaping(Error?) -> Void){
+    static func uploadItem(image: UIImage,title: String, price: String, description: String, completion: @escaping(Error?) -> Void){
         guard let uid = Auth.auth().currentUser?.uid else { return }
         
-        let values = ["uid":uid,
-                      "title": title,
-                      "price": price,
-                      "description": description ] as [String : Any]
-        
-        REF_POSTITEM.addDocument(data: values, completion: completion)
-        
+        ImageUploader.uploadImage(image: image) { imageUrl in
+            
+            let values = ["imageUrl": imageUrl,
+                          "uid":uid,
+                          "title": title,
+                          "price": price,
+                          "description": description ] as [String : Any]
+            
+            REF_POSTITEM.addDocument(data: values, completion: completion)
+        }
     }
     
     static func fetchPost(completion: @escaping([Items]) -> Void){

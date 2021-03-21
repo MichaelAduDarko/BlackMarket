@@ -10,9 +10,14 @@ import UIKit
 import TTGTagCollectionView
 import SCLAlertView
 
+
 class PostController: UIViewController, UITextFieldDelegate {
      
     //MARK:- Properties
+    
+//    var selectedImage: UIImage? {
+//        didSet { imageContainerViewController.image = selectedImage}
+//    }
     
     let stackScrollView = StackScrollView()
     
@@ -89,13 +94,14 @@ class PostController: UIViewController, UITextFieldDelegate {
     }
 
     @objc func handleDoneButton(){
+        guard let image = imageContainerViewController else {return}
         guard let title = listItemTitle.text else { return }
         guard let itemPrice = price.text else { return }
         guard let description = descriptionTV.text else { return }
         
         showLoader(true, withText: "Loading...")
         
-        UploadItemService.uploadItem(title: title, price: itemPrice, description: description) { error in
+        UploadItemService.uploadItem(image: image, title: title, price: itemPrice, description: description) { error in
             
             if let  error = error {
                 self.showLoader(false)
