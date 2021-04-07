@@ -96,6 +96,8 @@ class MainTabController: UITabBarController, UINavigationControllerDelegate {
 
 
 extension MainTabController: ProfileControllerDelegate {
+    
+    
     func handleLogout() {
         logout()
     }

@@ -28,7 +28,7 @@ class DetailController: UIViewController{
     
     private let imageBg: UIImageView = {
         let view = UIImageView()
-        view.contentMode = .scaleAspectFill
+        view.contentMode = .scaleToFill
         view.image = #imageLiteral(resourceName: "IMG_0330")
         view.heightAnchor.constraint(equalToConstant: 300).isActive = true
         return view

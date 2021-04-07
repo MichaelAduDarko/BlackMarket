@@ -39,11 +39,17 @@ class FeedController: UIViewController {
     func populateUserData(){
         UploadItemService.fetchPost { posts in
             self.posts = posts
+            self.collectionView.refreshControl?.endRefreshing()
             self.collectionView.reloadData()
-            
             print("DEBUG: JKKLL\(posts)")
         }
         
+    }
+    
+    //MARK:- Selectors
+    @objc func handleRefresher(){
+        posts.removeAll()
+        populateUserData()
     }
 
     //MARK:- Helper
@@ -61,7 +67,10 @@ class FeedController: UIViewController {
         collectionView.dataSource = self
 
         collectionView.register(FeedCell.self, forCellWithReuseIdentifier: "cell")
-
+        
+        let refresher = UIRefreshControl()
+        refresher.addTarget(self, action: #selector(handleRefresher), for: .valueChanged)
+        collectionView.refreshControl = refresher
     }
 
 
