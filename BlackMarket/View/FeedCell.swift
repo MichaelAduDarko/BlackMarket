@@ -20,6 +20,7 @@ class FeedCell: UICollectionViewCell {
     
     let feedImageView : UIImageView = {
         let iv = UIImageView()
+        iv.contentMode = .scaleToFill
         iv.translatesAutoresizingMaskIntoConstraints = false
         return iv
         
@@ -32,13 +33,11 @@ class FeedCell: UICollectionViewCell {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font =  UIFont(name: Font.AvenirNext , size: 16)
         label.textAlignment = .left
-        label.numberOfLines = 2
-        
         return label
     }()
     
     let locationLabel: CustomLabel = {
-        let label = CustomLabel( name: Font.AvenirNext , fontSize: 14, color: #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1))
+        let label = CustomLabel( name: Font.AvenirNext , fontSize: 11, color: #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1))
         label.textAlignment = .left
         return label
     }()
@@ -66,9 +65,9 @@ class FeedCell: UICollectionViewCell {
         let stackView = UIStackView(arrangedSubviews: [feedLabel,locationLabel])
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical
-        stackView.distribution = .fillEqually
+//        stackView.distribution = .fillEqually
 
-        let height = contentView.bounds.size.height * 0.85
+        let height = contentView.bounds.size.height * 0.80
         contentView.addSubview(feedImageView)
         NSLayoutConstraint.activate([
             feedImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
