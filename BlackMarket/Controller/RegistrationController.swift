@@ -73,15 +73,16 @@ class RegistrationController: UIViewController, UITextFieldDelegate {
         
         
         AuthService.shared.createUser(credentials: credentilas) { (error) in
-            
+            self.showLoader(false)
             if let error = error {
-                self.showLoader(false)
                 SCLAlertView().showError("error", subTitle: error.localizedDescription)
                 return
+
+            } else {
+                DispatchQueue.main.async {
+                    SceneDelegate.routeToRootViewController()
+                }
             }
-            
-            self.showLoader(false)
-            self.dismiss(animated: true, completion: nil)
         }
     }
     
