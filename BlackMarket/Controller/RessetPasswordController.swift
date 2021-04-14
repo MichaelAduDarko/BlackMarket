@@ -72,6 +72,7 @@ class RessetPasswordController: UIViewController , UITextFieldDelegate {
             
             self.showLoader(false)
             self.delegate?.didSendResetPasswordLink()
+            SCLAlertView().showSuccess("Success", subTitle: "We sent a link to your email to reset password")
            
         }
     }
