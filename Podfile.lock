@@ -340,7 +340,7 @@ PODS:
   - SDWebImage (4.4.8):
     - SDWebImage/Core (= 4.4.8)
   - SDWebImage/Core (4.4.8)
-  - TTGTagCollectionView (1.11.1)
+  - TTGTagCollectionView (1.11.2)
 
 DEPENDENCIES:
   - Firebase/Auth
@@ -404,8 +404,8 @@ SPEC CHECKSUMS:
   PromisesObjC: 3113f7f76903778cf4a0586bd1ab89329a0b7b97
   SCLAlertView: 6a77bb2edfc65e04dbe57725546cb4107a506b85
   SDWebImage: 783af2c3fa36291a250030c4752ee370a9a51d13
-  TTGTagCollectionView: 86fcbfa6a7493c9e860b01c2e693cffc8acf6de1
+  TTGTagCollectionView: 949030356ed27954f39dd29d78978c0f5c35a745
 
-PODFILE CHECKSUM: f58e7f8c8fa061da2c72054ad6ab22138d9db2e5
+PODFILE CHECKSUM: 751cd403e4e71f5a40478409eb78c4bd7d0bc42d
 
 COCOAPODS: 1.10.1

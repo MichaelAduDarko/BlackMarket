@@ -95,7 +95,7 @@ class FeedCell: UICollectionViewCell {
     }
 
     func update(with item: Item) {
-        feedLabel.text = "\(item.title) \(item.price)"
+        feedLabel.text = "\(item.title) $\(item.price)"
         locationLabel.text = item.uid
         feedImageView.sd_setImage(with: URL(string: item.imageUrl))
     }

@@ -203,6 +203,5 @@ class LoginController: UIViewController, UITextFieldDelegate {
 extension LoginController: ResetPasswordControllerDelegate {
     func didSendResetPasswordLink() {
         navigationController?.popViewController(animated: true)
-        print("Show success message here")
     }
 }

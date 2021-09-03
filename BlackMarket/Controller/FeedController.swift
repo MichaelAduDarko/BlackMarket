@@ -41,7 +41,6 @@ class FeedController: UIViewController {
             self.posts = posts
             self.collectionView.refreshControl?.endRefreshing()
             self.collectionView.reloadData()
-            print("DEBUG: JKKLL\(posts)")
         }
         
     }

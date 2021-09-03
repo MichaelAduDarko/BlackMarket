@@ -21,8 +21,6 @@ struct User {
         self.profileImageUrl = dictionary[Keys.profileImageURL] as? String ?? ""
         self.uid = dictionary[Keys.identifier] as? String ?? ""
         
-        print(dictionary)
-        
     }
 }
 

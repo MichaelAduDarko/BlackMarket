@@ -32,7 +32,6 @@ class MainTabController: UITabBarController, UINavigationControllerDelegate {
             DispatchQueue.main.async { SceneDelegate.routeToRootViewController() }
 
         }  catch {
-            print("DEBUG: error sigining out ")
         }
     }
     
